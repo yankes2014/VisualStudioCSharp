@@ -1,0 +1,5 @@
+C:\Users\student\Desktop\GołdynDominikLab4\Zadanie 0\bin\Debug\Zadanie 0.exe.config
+C:\Users\student\Desktop\GołdynDominikLab4\Zadanie 0\bin\Debug\Zadanie 0.exe
+C:\Users\student\Desktop\GołdynDominikLab4\Zadanie 0\bin\Debug\Zadanie 0.pdb
+C:\Users\student\Desktop\GołdynDominikLab4\Zadanie 0\obj\Debug\Zadanie 0.exe
+C:\Users\student\Desktop\GołdynDominikLab4\Zadanie 0\obj\Debug\Zadanie 0.pdb

@@ -1,0 +1,6 @@
+C:\Users\student\Desktop\GołdynDominikLab05\Zadanie5\bin\Debug\Zadanie5.exe.config
+C:\Users\student\Desktop\GołdynDominikLab05\Zadanie5\bin\Debug\Zadanie5.exe
+C:\Users\student\Desktop\GołdynDominikLab05\Zadanie5\bin\Debug\Zadanie5.pdb
+C:\Users\student\Desktop\GołdynDominikLab05\Zadanie5\obj\Debug\Zadanie5.csprojResolveAssemblyReference.cache
+C:\Users\student\Desktop\GołdynDominikLab05\Zadanie5\obj\Debug\Zadanie5.exe
+C:\Users\student\Desktop\GołdynDominikLab05\Zadanie5\obj\Debug\Zadanie5.pdb

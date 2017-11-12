@@ -1,0 +1,8 @@
+C:\Users\student\Desktop\GołdynDominikLab2\rachunek\bin\Debug\rachunek.exe.config
+C:\Users\student\Desktop\GołdynDominikLab2\rachunek\bin\Debug\rachunek.exe
+C:\Users\student\Desktop\GołdynDominikLab2\rachunek\bin\Debug\rachunek.pdb
+C:\Users\student\Desktop\GołdynDominikLab2\rachunek\obj\Debug\rachunek.exe
+C:\Users\student\Desktop\GołdynDominikLab2\rachunek\obj\Debug\rachunek.pdb
+C:\Users\domin\Downloads\GołdynDominikLab2\GołdynDominikLab2\rachunek\bin\Debug\rachunek.exe.config
+C:\Users\domin\Downloads\GołdynDominikLab2\GołdynDominikLab2\rachunek\obj\Debug\rachunek.exe
+C:\Users\domin\Downloads\GołdynDominikLab2\GołdynDominikLab2\rachunek\obj\Debug\rachunek.pdb

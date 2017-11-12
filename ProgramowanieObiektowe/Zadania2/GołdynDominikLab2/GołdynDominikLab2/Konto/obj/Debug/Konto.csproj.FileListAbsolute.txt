@@ -1,0 +1,6 @@
+C:\Users\student\Desktop\GołdynDominikLab2\Konto\bin\Debug\Konto.exe.config
+C:\Users\student\Desktop\GołdynDominikLab2\Konto\bin\Debug\Konto.exe
+C:\Users\student\Desktop\GołdynDominikLab2\Konto\bin\Debug\Konto.pdb
+C:\Users\student\Desktop\GołdynDominikLab2\Konto\obj\Debug\Konto.csprojResolveAssemblyReference.cache
+C:\Users\student\Desktop\GołdynDominikLab2\Konto\obj\Debug\Konto.exe
+C:\Users\student\Desktop\GołdynDominikLab2\Konto\obj\Debug\Konto.pdb

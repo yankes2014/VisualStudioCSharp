@@ -1,0 +1,6 @@
+C:\Users\student\Desktop\GołdynDominikLab12\Wejsciowka\bin\Debug\Wejsciowka.exe.config
+C:\Users\student\Desktop\GołdynDominikLab12\Wejsciowka\bin\Debug\Wejsciowka.exe
+C:\Users\student\Desktop\GołdynDominikLab12\Wejsciowka\bin\Debug\Wejsciowka.pdb
+C:\Users\student\Desktop\GołdynDominikLab12\Wejsciowka\obj\Debug\Wejsciowka.csprojResolveAssemblyReference.cache
+C:\Users\student\Desktop\GołdynDominikLab12\Wejsciowka\obj\Debug\Wejsciowka.exe
+C:\Users\student\Desktop\GołdynDominikLab12\Wejsciowka\obj\Debug\Wejsciowka.pdb

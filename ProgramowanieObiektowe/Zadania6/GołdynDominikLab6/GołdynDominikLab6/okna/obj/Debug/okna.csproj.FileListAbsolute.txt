@@ -1,0 +1,5 @@
+C:\Users\student\Desktop\GołdynDominikLab6\okna\bin\Debug\okna.dll
+C:\Users\student\Desktop\GołdynDominikLab6\okna\bin\Debug\okna.pdb
+C:\Users\student\Desktop\GołdynDominikLab6\okna\obj\Debug\okna.csprojResolveAssemblyReference.cache
+C:\Users\student\Desktop\GołdynDominikLab6\okna\obj\Debug\okna.dll
+C:\Users\student\Desktop\GołdynDominikLab6\okna\obj\Debug\okna.pdb

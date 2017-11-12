@@ -1,0 +1,6 @@
+komp1;chiny;2;2;2
+komp2;polska;3;3;3
+komp3;tak;2;6;23
+komp4;irlandia;15;4;7
+komp5;rosja;1;2;1
+komp6;norwegia;2;1;5

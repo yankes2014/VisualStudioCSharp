@@ -1,0 +1,8 @@
+C:\Users\student\Desktop\GołdynDominikLab03\Zad7\bin\Debug\Zad7.exe.config
+C:\Users\student\Desktop\GołdynDominikLab03\Zad7\bin\Debug\Zad7.exe
+C:\Users\student\Desktop\GołdynDominikLab03\Zad7\bin\Debug\Zad7.pdb
+C:\Users\student\Desktop\GołdynDominikLab03\Zad7\obj\Debug\Zad7.exe
+C:\Users\student\Desktop\GołdynDominikLab03\Zad7\obj\Debug\Zad7.pdb
+C:\Users\domin\Downloads\GołdynDominikLab03\GołdynDominikLab03\Zad7\bin\Debug\Zad7.exe.config
+C:\Users\domin\Downloads\GołdynDominikLab03\GołdynDominikLab03\Zad7\obj\Debug\Zad7.exe
+C:\Users\domin\Downloads\GołdynDominikLab03\GołdynDominikLab03\Zad7\obj\Debug\Zad7.pdb

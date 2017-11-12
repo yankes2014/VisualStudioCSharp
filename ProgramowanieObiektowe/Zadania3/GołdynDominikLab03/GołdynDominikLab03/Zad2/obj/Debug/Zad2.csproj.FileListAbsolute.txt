@@ -1,0 +1,6 @@
+C:\Users\student\Desktop\GołdynDominikLab03\Zad2\bin\Debug\Zad2.exe.config
+C:\Users\student\Desktop\GołdynDominikLab03\Zad2\bin\Debug\Zad2.exe
+C:\Users\student\Desktop\GołdynDominikLab03\Zad2\bin\Debug\Zad2.pdb
+C:\Users\student\Desktop\GołdynDominikLab03\Zad2\obj\Debug\Zad2.csprojResolveAssemblyReference.cache
+C:\Users\student\Desktop\GołdynDominikLab03\Zad2\obj\Debug\Zad2.exe
+C:\Users\student\Desktop\GołdynDominikLab03\Zad2\obj\Debug\Zad2.pdb

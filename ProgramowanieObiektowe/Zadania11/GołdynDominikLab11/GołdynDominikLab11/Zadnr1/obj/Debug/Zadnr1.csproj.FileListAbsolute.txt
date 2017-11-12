@@ -1,0 +1,5 @@
+C:\Users\student\Desktop\GołdynDominikLab11\Zadnr1\bin\Debug\Zadnr1.exe.config
+C:\Users\student\Desktop\GołdynDominikLab11\Zadnr1\bin\Debug\Zadnr1.exe
+C:\Users\student\Desktop\GołdynDominikLab11\Zadnr1\bin\Debug\Zadnr1.pdb
+C:\Users\student\Desktop\GołdynDominikLab11\Zadnr1\obj\Debug\Zadnr1.exe
+C:\Users\student\Desktop\GołdynDominikLab11\Zadnr1\obj\Debug\Zadnr1.pdb

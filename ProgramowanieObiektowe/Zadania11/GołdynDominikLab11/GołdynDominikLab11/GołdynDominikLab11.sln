@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wejsciowka", "Wejsciowka\Wejsciowka.csproj", "{3CF9E909-7D46-4646-A89C-E6DD89D15458}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zad1", "Zad1\Zad1.csproj", "{DD439D02-38E2-4F24-9BA7-BDA171E6CCC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zadnr1", "Zadnr1\Zadnr1.csproj", "{041DECB9-3064-47EC-80AA-63FC7539CBF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zad7", "Zad7\Zad7.csproj", "{3C91C10B-70E0-48B4-854C-D1DA3C338AB2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3CF9E909-7D46-4646-A89C-E6DD89D15458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CF9E909-7D46-4646-A89C-E6DD89D15458}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CF9E909-7D46-4646-A89C-E6DD89D15458}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CF9E909-7D46-4646-A89C-E6DD89D15458}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD439D02-38E2-4F24-9BA7-BDA171E6CCC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD439D02-38E2-4F24-9BA7-BDA171E6CCC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD439D02-38E2-4F24-9BA7-BDA171E6CCC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD439D02-38E2-4F24-9BA7-BDA171E6CCC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{041DECB9-3064-47EC-80AA-63FC7539CBF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{041DECB9-3064-47EC-80AA-63FC7539CBF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{041DECB9-3064-47EC-80AA-63FC7539CBF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{041DECB9-3064-47EC-80AA-63FC7539CBF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C91C10B-70E0-48B4-854C-D1DA3C338AB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C91C10B-70E0-48B4-854C-D1DA3C338AB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C91C10B-70E0-48B4-854C-D1DA3C338AB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C91C10B-70E0-48B4-854C-D1DA3C338AB2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

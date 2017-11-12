@@ -1,0 +1,6 @@
+Nazwa komp1 producent chiny cena 2 RAM 2 DYSK 2
+Nazwa komp2 producent polska cena 3 RAM 3 DYSK 3
+Nazwa komp3 producent tak cena 2 RAM 6 DYSK 23
+Nazwa komp4 producent irlandia cena 15 RAM 4 DYSK 7
+Nazwa komp5 producent rosja cena 1 RAM 2 DYSK 1
+Nazwa komp6 producent norwegia cena 2 RAM 1 DYSK 5

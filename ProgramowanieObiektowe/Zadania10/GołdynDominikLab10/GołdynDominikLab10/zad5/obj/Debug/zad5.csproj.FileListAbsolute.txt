@@ -1,0 +1,5 @@
+C:\Users\student\Desktop\GołdynDominikLab10\zad5\bin\Debug\zad5.exe.config
+C:\Users\student\Desktop\GołdynDominikLab10\zad5\bin\Debug\zad5.exe
+C:\Users\student\Desktop\GołdynDominikLab10\zad5\bin\Debug\zad5.pdb
+C:\Users\student\Desktop\GołdynDominikLab10\zad5\obj\Debug\zad5.exe
+C:\Users\student\Desktop\GołdynDominikLab10\zad5\obj\Debug\zad5.pdb

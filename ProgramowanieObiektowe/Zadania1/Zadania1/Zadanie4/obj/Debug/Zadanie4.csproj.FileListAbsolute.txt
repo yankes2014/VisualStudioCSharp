@@ -1,0 +1,5 @@
+C:\Users\domin\Desktop\Zadania1\Zadanie4\bin\Debug\Zadanie4.exe.config
+C:\Users\domin\Desktop\Zadania1\Zadanie4\bin\Debug\Zadanie4.exe
+C:\Users\domin\Desktop\Zadania1\Zadanie4\bin\Debug\Zadanie4.pdb
+C:\Users\domin\Desktop\Zadania1\Zadanie4\obj\Debug\Zadanie4.exe
+C:\Users\domin\Desktop\Zadania1\Zadanie4\obj\Debug\Zadanie4.pdb
