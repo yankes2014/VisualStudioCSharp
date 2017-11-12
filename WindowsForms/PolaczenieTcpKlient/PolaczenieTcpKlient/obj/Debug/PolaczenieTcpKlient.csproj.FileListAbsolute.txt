@@ -1,0 +1,9 @@
+C:\Users\domin\Desktop\PolaczenieTcpKlient\PolaczenieTcpKlient\bin\Debug\PolaczenieTcpKlient.exe.config
+C:\Users\domin\Desktop\PolaczenieTcpKlient\PolaczenieTcpKlient\bin\Debug\PolaczenieTcpKlient.exe
+C:\Users\domin\Desktop\PolaczenieTcpKlient\PolaczenieTcpKlient\bin\Debug\PolaczenieTcpKlient.pdb
+C:\Users\domin\Desktop\PolaczenieTcpKlient\PolaczenieTcpKlient\obj\Debug\PolaczenieTcpKlient.csprojResolveAssemblyReference.cache
+C:\Users\domin\Desktop\PolaczenieTcpKlient\PolaczenieTcpKlient\obj\Debug\PolaczenieTcpKlient.Form1.resources
+C:\Users\domin\Desktop\PolaczenieTcpKlient\PolaczenieTcpKlient\obj\Debug\PolaczenieTcpKlient.Properties.Resources.resources
+C:\Users\domin\Desktop\PolaczenieTcpKlient\PolaczenieTcpKlient\obj\Debug\PolaczenieTcpKlient.csproj.GenerateResource.Cache
+C:\Users\domin\Desktop\PolaczenieTcpKlient\PolaczenieTcpKlient\obj\Debug\PolaczenieTcpKlient.exe
+C:\Users\domin\Desktop\PolaczenieTcpKlient\PolaczenieTcpKlient\obj\Debug\PolaczenieTcpKlient.pdb

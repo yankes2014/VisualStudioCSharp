@@ -1,0 +1,8 @@
+C:\Users\domin\Desktop\PolaczenieTcpKlient\PolaczenieTcpSerwer\bin\Debug\PolaczenieTcpSerwer.exe.config
+C:\Users\domin\Desktop\PolaczenieTcpKlient\PolaczenieTcpSerwer\bin\Debug\PolaczenieTcpSerwer.exe
+C:\Users\domin\Desktop\PolaczenieTcpKlient\PolaczenieTcpSerwer\bin\Debug\PolaczenieTcpSerwer.pdb
+C:\Users\domin\Desktop\PolaczenieTcpKlient\PolaczenieTcpSerwer\obj\Debug\PolaczenieTcpSerwer.Form1.resources
+C:\Users\domin\Desktop\PolaczenieTcpKlient\PolaczenieTcpSerwer\obj\Debug\PolaczenieTcpSerwer.Properties.Resources.resources
+C:\Users\domin\Desktop\PolaczenieTcpKlient\PolaczenieTcpSerwer\obj\Debug\PolaczenieTcpSerwer.csproj.GenerateResource.Cache
+C:\Users\domin\Desktop\PolaczenieTcpKlient\PolaczenieTcpSerwer\obj\Debug\PolaczenieTcpSerwer.exe
+C:\Users\domin\Desktop\PolaczenieTcpKlient\PolaczenieTcpSerwer\obj\Debug\PolaczenieTcpSerwer.pdb

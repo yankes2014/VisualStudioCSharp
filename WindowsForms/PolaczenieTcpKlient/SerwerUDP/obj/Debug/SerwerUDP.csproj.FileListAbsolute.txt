@@ -1,0 +1,8 @@
+C:\Users\domin\Desktop\PolaczenieTcpKlient\SerwerUDP\bin\Debug\SerwerUDP.exe.config
+C:\Users\domin\Desktop\PolaczenieTcpKlient\SerwerUDP\bin\Debug\SerwerUDP.exe
+C:\Users\domin\Desktop\PolaczenieTcpKlient\SerwerUDP\bin\Debug\SerwerUDP.pdb
+C:\Users\domin\Desktop\PolaczenieTcpKlient\SerwerUDP\obj\Debug\SerwerUDP.Form1.resources
+C:\Users\domin\Desktop\PolaczenieTcpKlient\SerwerUDP\obj\Debug\SerwerUDP.Properties.Resources.resources
+C:\Users\domin\Desktop\PolaczenieTcpKlient\SerwerUDP\obj\Debug\SerwerUDP.csproj.GenerateResource.Cache
+C:\Users\domin\Desktop\PolaczenieTcpKlient\SerwerUDP\obj\Debug\SerwerUDP.exe
+C:\Users\domin\Desktop\PolaczenieTcpKlient\SerwerUDP\obj\Debug\SerwerUDP.pdb

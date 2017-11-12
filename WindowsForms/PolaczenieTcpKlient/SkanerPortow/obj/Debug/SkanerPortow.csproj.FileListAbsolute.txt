@@ -1,0 +1,8 @@
+C:\Users\domin\Desktop\PolaczenieTcpKlient\SkanerPortow\bin\Debug\SkanerPortow.exe.config
+C:\Users\domin\Desktop\PolaczenieTcpKlient\SkanerPortow\obj\Debug\SkanerPortow.Form1.resources
+C:\Users\domin\Desktop\PolaczenieTcpKlient\SkanerPortow\obj\Debug\SkanerPortow.Properties.Resources.resources
+C:\Users\domin\Desktop\PolaczenieTcpKlient\SkanerPortow\obj\Debug\SkanerPortow.csproj.GenerateResource.Cache
+C:\Users\domin\Desktop\PolaczenieTcpKlient\SkanerPortow\bin\Debug\SkanerPortow.exe
+C:\Users\domin\Desktop\PolaczenieTcpKlient\SkanerPortow\bin\Debug\SkanerPortow.pdb
+C:\Users\domin\Desktop\PolaczenieTcpKlient\SkanerPortow\obj\Debug\SkanerPortow.exe
+C:\Users\domin\Desktop\PolaczenieTcpKlient\SkanerPortow\obj\Debug\SkanerPortow.pdb
