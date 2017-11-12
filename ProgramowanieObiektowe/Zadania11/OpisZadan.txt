@@ -1,0 +1,179 @@
+Zadanie 1
+Napisz klasê z zestawem operacji na wartoœci double (o jednakowych sygnaturach np. wypisuj¹ce na ekran metody typu void)  a nastêpnie utwórz delegata wykonuj¹cego sekwencje operacji (na przyk³ad sinus, kwadrat itp.).
+
+Zadanie 2 [dom]
+Napisz klasê z zestawem operacji na wartoœci string (o jednakowych sygnaturach np. wypisuj¹ce na ekran metody typu void)  a nastêpnie utwórz delegata wykonuj¹cego sekwencje operacji (na przyk³ad naDuze, Odwroc  itp.).
+
+Zadanie 3
+Napisz prost¹ klasê Calka do przybli¿onego ca³kowania funkcji jednej zmiennej (np. metod¹ trapezów, prostok¹tów), funkcja do ca³kowania ma byæ przekazywana przez delegata. Napisz program ilustruj¹cy. Wykonaj tak¿e przyk³ady z wyra¿eniami lambda.
+
+Zadanie 4 [dom]
+Napisz klasê Tab która sortuje zawart¹ tablicê wed³ug kryterium przekazanego przez delegata. Napisz program ilustruj¹cy. Wykonaj tak¿e przyk³ady z wyra¿eniami lambda
+
+[code c#]
+class Tab
+{
+    private object[] tab;
+
+/... inne metody
+   
+    public void Sort(KtoryMniejszy p)
+    {
+       for (int k = 0; k < tab.Length - 1; k++)
+            for (int i = 0; i < tab.Length - 1 - k; i++)
+                if (p(tab[i], tab[i + 1]))
+                {
+                    object tmp = tab[i];
+                    tab[i] = tab[i + 1];
+                    tab[i + 1] = tmp;
+                }
+    }
+}
+
+[/code]
+Zadanie 5
+Uruchom poni¿szy program a nastêpnie zamiast instrukcji switch u¿yj rozwiazania z delegatami.
+
+[code c#]
+class Komputer
+{
+    private double cena;
+    private string marka;
+    public Komputer(double cena, string marka)
+    {
+        this.cena = cena;
+        this.marka = marka;
+    }
+
+    public double Cena
+    {
+        get { return cena; }
+    }
+
+    public string Marka
+    {
+        get { return marka; }
+    }
+
+    public override string ToString()
+    {
+        return marka + " " + cena;
+    }
+}
+    class Program
+    {
+        const int N = 100;
+
+        void Op_N(Komputer[] Tab, ref int ile)
+        {
+            string str;
+            if (ile == N)
+            {
+                Console.WriteLine("Tablica pe³na.");
+                return;
+            }
+
+            Console.Write("\nPodaj markê komputera : ");
+          string m = Console.ReadLine();
+          Console.Write("\nPodaj cenê komputera : ");
+          str = Console.ReadLine();
+          double c = double.Parse(str);
+          Tab[ile++] = new Komputer(c,m);       
+        }
+
+        void Op_W(Komputer[] Tab, ref int ile)
+        {
+            int licz;
+            for (licz = 0; licz < ile; ++licz)
+                Console.WriteLine("{0}. M : {1}, C : {2}",
+                licz, Tab[licz].Marka, Tab[licz].Cena);
+        }
+
+        void Op_U(Komputer[] Tab, ref int ile)
+        {
+            int licz;
+            string str;
+
+            Console.Write("\nPodaj numer komputera : ");
+            str = Console.ReadLine();
+            licz = int.Parse(str);
+
+            if (licz < 0 || licz >= ile)
+            {
+                Console.WriteLine("B³êdny numer komputera.");
+                return;
+            }
+
+            Tab[licz] = Tab[ile-- - 1];
+
+        }
+
+        void Op_S(Komputer[] Tab, ref int ile)
+        {
+            int licz;
+            double Suma = 0;
+            for (licz = 0; licz < ile; ++licz)
+                Suma += Tab[licz].Cena;
+            Console.WriteLine("Suma cen wszystkich komputerów : {0}", Suma);
+        }
+
+        void Dzialanie()
+        {
+            Komputer[] TabKomp = new Komputer[N];
+            int ile = 0;
+            bool dalej = true;
+            char opcja;
+            string str;
+
+            while (dalej)
+            {
+                Console.Write("\nWybierz opcjê [N,W,U,S,Q] : ");
+                str = Console.ReadLine();
+                opcja = str[0];
+
+                switch (opcja & 0x5F)
+                {
+                    case 'N':
+                        Op_N(TabKomp, ref ile);
+                        break;
+                    case 'W':
+                        Op_W(TabKomp, ref ile);
+                        break;
+                    case 'U':
+                        Op_U(TabKomp, ref ile);
+                        break;
+                    case 'S':
+                        Op_S(TabKomp, ref ile);
+                        break;
+                    case 'Q':
+                        dalej = false;
+                        break;
+                    default:
+                        Console.WriteLine("Z³a opcja");
+                        break;
+                }
+
+
+            }
+
+        }
+        static void Main(string[] args)
+        {
+            new Program().Dzialanie();
+        }
+    }
+
+[/code]
+
+
+Zadanie 6 [dom]
+Napisz klasê Vector (wartoœci double) ? wektor n-wymiarowy, maj¹c¹ operacjê oblicz oraz zestaw dodatkowych operacji takich jak wczytywanie, pierwiastkowanie (ka¿dego elementu) i dodawanie elementu. Operacje maj¹ mieæ taka sam¹ sygnaturê i byæ przekazywane do oblicz jako delegaty. Wykorzystaj tablicê delegatów.
+
+
+Zadanie 7
+Napisz klasy Sejf, Stra¿nik i Syrena do programu symuluj¹cego reakcjê na w³amanie do sejfu (= podanie z³ego kodu dostêpu). Delegat (zdarzenie) Alarm powinien uruchamiaæ zarówno Syrenê jak i stra¿nika.
+
+Zadanie 8 [dom]
+Napisz klasê Zegar i klasê Wyswietlacz i zdarzenie delegata ObslugaZmianyCzasu. Zegar ma obs³ugiwac zarejestrowane wyœwietlacze (lub metody wyœwietlaj¹ce). Napisz program ilustrujacy.
+
+

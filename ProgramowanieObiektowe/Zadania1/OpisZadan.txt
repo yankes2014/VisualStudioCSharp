@@ -1,0 +1,16 @@
+Zadanie 1
+A. Zdefiniowaæ klasê Punkt do obs³ugi punktu na p³aszczyŸnie. Klasa ma mieæ konstruktor inicjuj¹cy punkt (obie wspó³rzêdne), oraz co najmniej metodê wyœwietlaj¹c¹ wspó³rzêdne .
+B. W sytuacjach jak w A w C# raczej stosujemy struktury. Zamieniæ Punkt z klasy na strukturê. Dokonaæ odpowiednich zmian w kodzie. Jakie s¹ ró¿nice?
+
+Zadanie 2 (do domu)
+Zdefiniowaæ strukturê Zespolona do obs³ugi liczby zespolonej. Struktura ma mieæ konstruktor inicjuj¹cy liczbê zespolon¹ , oraz metodê wyœwietlaj¹c¹ wspó³rzêdne. Dodaæ odpowiedni zestaw metod Dodaj, Odejmij, Pomnoz, Podziel.
+Uwaga w .NET jest struktura Complex jednak¿e teraz robimy samodzielnie.
+
+Zadanie 3
+Zdefiniowaæ klasê Student (nazwisko, imiê, nr albumu, semestr) tak aby wszystkie pola by³y prywatne i nastêpnie zdefiniowaæ zestaw funkcji pozwalaj¹cych zmieniaæ pola sk³adowe i wyœwietlaæ zawartoœæ. Napisaæ prosty program wykorzystuj¹cy tak¹ klasê.
+
+Zadanie 4
+Zdefiniowaæ klasê Klient oraz klasê Konto. Klient mo¿e mieæ jedno konto. Napisaæ prosty program symuluj¹cy wp³aty i wyp³aty z konta, sprawdzanie salda, przekazanie œrodków z jednego konta na inne itp..
+
+Zadanie 5 (do domu)
+Zdefiniowaæ klasê Indeks oraz Student (podobn¹ jak w zadaniu 3). Napisaæ prosty program symuluj¹cy studiowanie (wpisywanie na kierunek, wpisywanie ocen do indeksu itp.).

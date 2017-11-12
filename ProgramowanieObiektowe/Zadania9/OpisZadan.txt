@@ -1,0 +1,228 @@
+Zadanie 1
+Zaimplementowaæ interfejs IEnumerable dla klasy Firma napisaæ program ilustruj¹cy.
+
+
+public class Pracownik{
+string nazwisko
+string stanowisko;
+
+ public string Stanowisko { get { return stanowisko; } }
+
+ public Pracownik(string n, string s) {nazwisko = n;stanowisko = s; }
+
+public override string ToString(){return string.Format("{0} ({1})", Nazwisko, Stanowisko); }
+}
+
+public class Firma : IEnumerable
+{ string nazwa;
+
+private Pracownik[] pracownicy;
+//... tu inne metody
+}
+
+
+Zadanie 2 (dom)
+Zaimplementowaæ interfejs IEnumerable<T> dla klasy Firma<T> napisaæ program ilustruj¹cy wykorzystuj¹cy klasy Pracownik, Osoba itp..
+
+<code>
+
+public class Firma<P> : IEnumerable<P>
+{
+    string nazwa;
+    private P[] pracownicy;
+//... tu inne metody
+}
+
+
+// np. Osoba
+public class Osoba
+{
+    string nazwisko;
+    string imie;
+
+    public string Nazwisko { get { return nazwisko; } }
+    public string Imie { get { return imie; } }
+
+    public Osoba(string n, string s)
+    {
+        nazwisko = n;
+        imie = s;
+    }
+
+    public override string ToString()
+    {
+        return string.Format("{0} {1}", Nazwisko, Imie);
+    }
+}
+
+</code>
+
+
+Zadanie 3 (dom)
+Dla klasy Pracownik, utwórz klasê GrupaPracowników zwieraj¹c¹ listê pracowników (wykorzystaj ArrayList). Dla tej klasy zdefiniuj kilka iteratorów (zwyk³y, odwrotny; iteracja ma byæ po kolekcji).
+
+<code>
+public class Pracownik
+{
+    string nazwisko;
+    string stanowisko;
+
+    public string Nazwisko { get { return nazwisko; } }
+    public string Stanowisko { get { return stanowisko; } }
+
+    public Pracownik(string n, string s)
+    {
+        nazwisko = n;
+        stanowisko = s;
+    }
+
+    public override string ToString()
+    {
+        return string.Format("{0} ({1})", Nazwisko, Stanowisko);
+    }
+}
+[/code]
+
+
+Zadanie 4
+Utwórz klasê
+
+<code>Brygada<T>[/code] zwieraj¹c¹ pracowników typu T (wykorzystaj [code c#]Stack<T></code> albo [code c#]List<T>[/code]). Dla tej klasy zdefiniuj kilka iteratorów (zwyk³y, odwrotny; iteracja ma byæ po kolekcji). Napisz program ilustruj¹cy wykorzystuj¹cy klasy Pracownik, Osoba itp..
+
+
+Zadanie 5
+Zaimplementowaæ w³asna kolekcjê stos (na tablicy) implementuj¹c¹ ICollection.
+
+
+Zadanie 6 (dom)
+Zaimplementowaæ w³asna kolekcjê kolejka  (na tablicy) implementuj¹c¹ ICollection.
+
+
+Zadanie 7
+Zaimplementowaæ metodê rozszerzaj¹c¹ wyznaczaj¹c¹ liczbê elementów wiêkszych ni¿ podany element typu T na interfejsie IEnumerable<T> gdzie T jest IComparable<T>. Zaimplementuj te¿ metodê NaStos zamieniaj¹c¹ IEnumerable<T> na Stack<T>.
+
+
+Zadanie 8 (dom)
+Zaimplementowaæ metodê rozszerzaj¹c¹ wyznaczaj¹c¹ minimum na interfejsie IEnumerable<T> gdzie T jest IComparable<T>. Zaimplementuj te¿ metodê NaKolejkê zamieniaj¹c¹ IEnumerable<T> na Queue<T>.
+
+
+Zadanie 9.
+Napisz metodê Dispose dla struktury AutoClosing. Chcemy aby zamyka³a ona strumieñ.
+
+<code>
+struct AutoClosing : IDisposable
+{
+    public AutoClosing(TextReader reader)
+    {
+        if (reader == null)
+        {
+            throw new ArgumentNullException();
+        }
+        target = reader;
+    }
+    public void Dispose()
+    {
+//???
+    }
+    private readonly TextReader target;
+}
+</code>
+
+Napisaæ program ilustruj¹cy.
+
+
+Zadanie 10 (dom)
+Mamy klasê WriteToFile (obudowuj¹c¹ StreamWriter). Zaimplementowaæ metodê Dispose I destructor. Napisaæ program ilustruj¹cy.
+
+<code>
+public class WriteToFile : IDisposable
+    {
+
+        public WriteToFile(string _file, string _text)
+        {
+            file = new StreamWriter(_file, true);
+            text = _text;
+        }
+
+        public void WriteText()
+        {
+            file.WriteLine(text);
+        }
+
+        public void Dispose()
+        {
+//??
+        }
+
+        ~WriteToFile()
+        {
+// ??
+        }
+
+        private StreamWriter file;
+        private string text;
+    }
+
+</code>
+
+
+Zadanie 11
+
+Dla klasy Book zaimplementuj sensownie interfejs IConvertible
+
+<code>
+    struct Book : IConvertible
+    {
+        string m_Title;
+
+        public string Title
+        {
+            get { return m_Title; }
+            set { m_Title = value; }
+        }
+
+        public override string ToString()
+        {
+            return this.Title.ToString();
+        }
+    }
+</code>
+
+
+Zadanie 12 (dom)
+
+Dla klasy Trojka zaimplementuj sensownie interfejs IConvertible
+
+<code c#>
+class Trojka
+{
+    decimal first;
+    decimal second;
+    decimal third;
+
+    public Trojka(decimal val1, decimal val2, decimal val3)
+    {
+        this.first = val1;
+        this.second = val2;
+        this.third = val3;
+    }
+
+    public TypeCode GetTypeCode()
+    {
+        return TypeCode.Object;
+    }
+
+    public decimal GetAverage()
+    {
+        return (GetSum() / 3);
+    }
+    public decimal GetSum()
+    {
+        return first + second + third;
+    }
+
+    public decimal GetProduct()
+    {
+        return first * second * third;
+    }
+}

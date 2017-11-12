@@ -1,0 +1,296 @@
+Zadanie 1
+Automat do rozpoznawania monet generuje plik tekstowy, który zawiera ci¹g znaków opisuj¹cych poszczególne monety (bez ¿adnych znaków rozdzielaj¹cych):
+
+moneta znak
+1 gr  - a
+2 gr  - b
+5 gr  - c
+10 gr - d
+20 gr - e
+50 gr - f
+1 z³  - A
+2 z³  - B
+5 z³  - C
+
+Opracowaæ klasê z metod¹ która wczytuje wszystkie znaki z takiego pliku i oblicza ³¹czn¹ kwotê z³otych i groszy rozpoznanych przez automat oraz ustala ile by³o monet ka¿dego z 9 rodzajów..
+
+Zadanie 2 (dom)
+Plik Dane.txt zawiera ci¹g liczb ca³kowitych - ka¿da liczba zapisana jest w oddzielnej linii. Napisz klasê z metod¹, która odczytuje z pliku dyskowego Dane.txt kolejne liczby i wpisuje do pliku Dodatnie.txt tylko te z nich, które maja wartoœci wiêksze od 0.
+
+Zadanie 3
+Opracowaæ klasê z metod¹, która wczytuje wyrazy z pliku (nale¿y zapytaæ o nazwê pliku), a nastêpnie sortuje je alfabetycznie (mo¿na korzystaæ z klasy Array). Posortowane wyrazy nale¿y zapisaæ do pliku wynikowego (zapytaæ o nazwê pliku).
+
+Zadanie 4 (dom)
+Napisz klasê z metoda, która poprosi u¿ytkownika o podanie nazwy pliku tekstowego. Nastêpnie metoda sprawdzi czy plik istnieje, wyœwietlaj¹c komunikat o b³êdzie gdy pliku nie ma w podanej lokalizacji. Plik zostanie otwarty i jego zawartoœæ zostanie skopiowana do nowego pliku (którego nazwê pod u¿ytkownik), przy czym ka¿dy znak bêd¹cy liter¹ zostanie zamieniony na literê wielk¹.
+
+Zadanie 5
+Opracowaæ klasê Baza do prowadzenia spisu komputerów (max. 20 komputerów przechowywanych w tablicy). Ka¿dy komputer opisany jest za pomoc¹ klasy zawieraj¹cej nazwê ,producenta, cenê, podstawowe parametry (takie jak RAM,  wielkoœæ dysku).  Klasa Baza realizuje  polecenia umo¿liwiaj¹ce:
+C : wczytanie liczby komputerów  i tablicy obiektów opisuj¹cych komputery z pliku dyskowego (nale¿y zapytaæ o nazwê pliku),
+N :  wczytanie danych opisuj¹cych nowy komputer (jego typ, parametry itp.)  i wprowadzenie ich  do kolejnej pozycji  tablicy obiektów,
+W : wyœwietlanie informacji o wszystkich komputerach,
+Z : zapis liczby komputerów i tabeli obiektów do pliku dyskowego (zapytaæ o nazwê pliku),
+Q : zakoñczenie programu.
+
+Zadanie 6 (dom)
+Opracowaæ klasê spis pracowników firmy (max. 20 pracowników). Ka¿dy pracownik opisany jest za pomoc¹ klasy zawieraj¹cej nazwisko, pensjê i procent premii (sk³adowe prywatne), funkcje dostêpu oraz funkcjê Wyplata obliczaj¹c¹ kwotê miesiêcznej wyp³aty (pensja + premia) dla wszystkich pracowników. Spis realizuje nastêpuj¹ce polecenia:
+N : nowy pracownik - wczytaæ dane opisuj¹ce i wprowadziæ do kolejnej pozycji tabeli obiektów klas,
+P : nowa wartoœæ pensji dla pracownika o podanym nazwisku,
+R : nowa wartoœæ procentu premii dla pracownika o podanym nazwisku,
+W : wyp³ata, obliczyæ ile potrzeba z³otych na wszystkie pensje i premie,
+Z: zapis spisu do pliku
+O: odczyt spisu z pliku
+K : koniec programu.
+
+
+Zadanie 7
+W klasie Program napisaæ metodê wypisuj¹c¹ na ekran wynik dzielenia dwóch liczb typu double
+double divide(double a, double b)
+Metoda ma zg³aszaæ wyj¹tek w przypadku dzielenia przez zero.
+
+Zadanie 8 (dom)
+W klasie (strukturze) Zespolona w metodzie zwracaj¹cej wynik dzielenia dwóch liczb typu Zespolona zg³aszaæ wyj¹tek w przypadku dzielenia prz ez zero
+Nale¿y zdefiniowaæ taki wyj¹tek.
+
+Zadanie 9.
+Mamy nastêpuj¹cy program symuluj¹cy odczyt danych z bazy obs³uguj¹cy b³êdy w stylu jêzyka C (czyli tradycyjnie poprzez instrukcje warunkowe). Zmodyfikowaæ program tak aby obs³uga b³êdów polega³a na obs³udze wyj¹tków.
+[code csharp]
+   class Baza
+    {
+        public const int DB_OK = 0;
+        public const int DB_NOT_INIT = -1;
+        public const int DB_OPEN_ERROR = -2;
+        public const int DB_CLOSE_ERROR = -3;
+        public const int DB_ACCESS_ERROR = -4;
+        Random random;
+        public Baza()
+        {
+            random = new Random();
+     
+        }
+        public int dbInit( )
+        {
+            if (random.Next(7)%4!=0) return DB_OK;
+            return DB_NOT_INIT ;
+        }
+
+        public int dbOpen( string name )
+        {
+            if (random.Next(6) % 4 != 0) return 1;
+            return DB_OPEN_ERROR ;
+        }
+
+        public int dbGetData( int field, char [] data )
+        {
+            if (random.Next(5) / 4 != 0) return DB_ACCESS_ERROR;
+            int i = 0 ;
+            for(  ; i < 10; i++ )
+                data[ i ] = (char)(i + 48 );
+            data[ i ] = (char)0x00 ;
+            return DB_OK;
+        }
+
+        public int dbClose( int handle )
+        {
+            if (random.Next(8) % 4 != 0) return DB_OK;
+            return DB_CLOSE_ERROR;
+        }
+
+
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Baza b = new Baza();
+
+            if( b.dbInit( ) == Baza.DB_OK )
+            {
+                int theHandle = b.dbOpen( "test.dat" ) ;
+               
+                if( theHandle > 0 )
+                {
+                    char [] data = new char[ 30 ] ;
+
+                    if( b.dbGetData( 1, data ) == Baza.DB_OK )
+                        Console.WriteLine( "Dane sa zaladowane ") ;
+                    else
+                        Console.WriteLine("Blad przy odczycie") ;
+
+                    if( b.dbClose( theHandle ) != Baza.DB_OK )
+                        Console.WriteLine("Blad przy zamknieciu") ;
+                }
+                else
+                    Console.WriteLine("Blad przy otwarciu" ) ;
+            }
+            else
+                Console.WriteLine("Blad przy inicjalizacji bazy") ;
+
+        }
+    }
+[/code]
+
+Zadanie 10 (dom).
+Mamy nastêpuj¹cy program symuluj¹cy pracê magazynu b³êdy s¹ obs³ugiwane w starym stylu. Zmodyfikowaæ program tak aby obs³uga b³êdów (problemów w pracy magazynu) polega³a na obs³udze wyj¹tków.
+
+[code csharp]
+enum Informacja { W³amanie=-5, ZepsutyZamek, Nieczynne, BrakMiejsca,  BrakTowaru, OK=1};
+class Magazyn
+{
+    int ile;
+    string[] towary;
+    bool otwarty = false;
+    int kod;
+
+    public Magazyn(int kod)
+    {
+        ile = 0;
+        towary = new string[5];
+        this.kod = kod;
+    }
+
+    public Informacja Otwórz(int kod)
+    {
+        if (this.kod == kod)
+        {
+            otwarty = true;
+            return Informacja.OK;
+        }
+        return Informacja.W³amanie;
+    }
+
+    public Informacja Zamknij(int kod)
+    {
+        if (this.kod == kod)
+        {
+            otwarty = false;
+            return Informacja.OK;
+        }
+        return Informacja.ZepsutyZamek;
+    }
+
+    public Informacja DodajTowar(string towar)
+    {
+        if (!otwarty) return Informacja.Nieczynne;
+        for (int i = 0; i < towary.Length; i++)
+            if (towary[i] == null)
+            {
+                towary[i] = towar;
+                ile++;
+              
+                return Informacja.OK;
+            }
+        return Informacja.BrakMiejsca;// brak miejsca w magazynie
+    }
+
+    public Informacja WydajTowar(string name)
+    {
+        if (!otwarty) return Informacja.Nieczynne;
+        for (int i = 0; i < towary.Length; i++)
+            if (towary[i] != null)
+            {
+                if (towary[i] == name)
+                {
+                    towary[i] = null;
+                    return Informacja.OK;
+                }
+            }
+        return Informacja.BrakTowaru; // nie ma takiego towaru
+    }
+
+    public void Pokaz()
+    {
+        if(otwarty) Console.WriteLine("magazyn otwarty");
+        else Console.WriteLine("magazyn zamkniêty");
+        foreach (string towar in towary)
+            if (towar != null) Console.WriteLine(towar);
+        Console.WriteLine();
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        string odpowiedŸ= "t";
+        Random akcja = new Random();
+
+        Magazyn b = new Magazyn(3);
+        b.Otwórz(3);
+        for (int i = 2; i < 6; i++) b.DodajTowar("towar" + i);
+        b.Pokaz();
+        b.Zamknij(3);
+       
+        while (odpowiedŸ == "t")
+        {
+            if (akcja.Next(1, 3) == 1) // dostawa
+            {
+                if (b.Otwórz(akcja.Next(2,4)) == Informacja.W³amanie)
+                {
+                    Console.WriteLine("próba w³amania");
+                }
+                else
+                {
+                    if (b.DodajTowar("towar" + akcja.Next(1, 6)) == Informacja.BrakMiejsca)
+                    {
+                        Console.WriteLine("brak miejsca");
+                    }
+                    else
+                    {
+                        Console.WriteLine("towar przyjeto");
+                        b.Pokaz();
+                    }
+                    if(b.Zamknij(akcja.Next(2,4))== Informacja.ZepsutyZamek)
+                        Console.WriteLine("zepsuty zamek");
+                    else Console.WriteLine("magazyn zamknieto");
+                }
+            }
+            else   // wydanie
+            {
+                if (b.Otwórz(akcja.Next(2, 4)) == Informacja.W³amanie)
+                {
+                    Console.WriteLine("próba w³amania");
+                }
+                else
+                {
+                    if (b.WydajTowar("towar" + akcja.Next(1, 6)) == Informacja.BrakTowaru)
+                    {
+                        Console.WriteLine("brak towaru");
+                    }
+                    else
+                    {
+                        Console.WriteLine("towar wydano");
+                        b.Pokaz();
+                    }
+                    if (b.Zamknij(akcja.Next(2, 4)) == Informacja.ZepsutyZamek)
+                        Console.WriteLine("zepsuty zamek");
+                    else Console.WriteLine("magazyn zamknieto");
+                }
+            }
+
+            Console.WriteLine("czy kontynuowaæ pracê? t/n i Enter");
+            odpowiedŸ = Console.ReadLine();
+        }
+
+    }
+}
+
+[/code]
+
+
+Zadanie 11
+
+Chcemy napisaæ klasê, tablicê dynamiczn¹ TabLim z przeci¹¿onym operatorem indeksowania. TabLim ma mieæ sk³adowe
+int rozmiar; // liczba elementów tablicy
+double [] tab;
+double max;
+double min;
+
+Konstruktory klasy TabLim maj¹ ustawiaæ te sk³adowe. Klasa ma zg³aszaæ wyj¹tek ZlyInd gdy podamy z³y indeks. Klasa TabLim ma zg³aszaæ wyj¹tek ZlyLim w przypadku próby przypisania wartoœci spoza zakresu.
+
+
+Zadanie 12 (dom)
+Chcemy napisaæ klasê, tablicê dynamiczn¹ TabParzysta z przeci¹¿onym operatorem indeksowania przechowuj¹c¹ tylko parzyste elementy. TabParzysta ma mieæ sk³adowe
+int rozmiar; // liczba elementów tablicy
+int [] tab;
+
+Konstruktory klasy TabParzysta maj¹ ustawiaæ te sk³adowe. Klasa ma zg³aszaæ wyj¹tek ZlyInd gdy podamy z³y indeks. Klasa TabParzysta ma zg³aszaæ wyj¹tek ZlaWartosc w przypadku próby przypisania wartoœci nieparzystej.

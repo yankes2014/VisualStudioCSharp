@@ -1,0 +1,319 @@
+Zadanie 1
+Korzystaj¹c z mechanizmu funkcji wirtualnych, zmodyfikuj utworzone klasy na potrzeby programu operuj¹cego na oknach. Zamieñ metodê DrawWindow w klasie Window na wirtualn¹. Dodaj metodê wirtualn¹ MoveWindow, dodaj pola width i height oraz metodê ResizeWindow. Klasy "okienkowe" umieœæ w osobnej bibliotece Okna.dll i wykorzystaj j¹ w programie g³ównym. Dodaj inne typy okien - CheckBox, RadioButton itp.
+
+
+
+
+public abstract class Window
+{
+    // zawieszone w pewnym punkcie lewy górny róg okna
+    protected int top;
+    protected int left;
+   
+    public Window(int top, int left)
+    {
+        this.top = top;
+        this.left = left;
+    }
+    // rysowanie to sprawa konkretnego okna
+    public abstract void DrawWindow();
+}
+
+public class Panel : Window
+{
+    protected List<window> okna;
+        public Panel(int top, int left)
+        : base(top, left)
+    {
+        okna = new List<window>();
+    }
+
+        public override void DrawWindow()
+        {
+            Console.WriteLine("Panel at: {0} {1}", top, left);
+            foreach (Window w in okna)
+                w.DrawWindow();
+        }
+
+        public void Dodaj(Window w)
+        {
+            okna.Add(w);
+        }
+}
+
+public class TextBox : Window
+{
+    private string textBoxContents;
+   
+    public TextBox(int top, int left, string contents)
+        : base(top, left)
+    {
+        textBoxContents = contents;
+    }
+
+    public override void DrawWindow()
+    {
+        Console.WriteLine("textBox: {0} at {1}, {2}\n", textBoxContents, top, left);
+    }
+   
+}
+
+public class Button : Window
+{
+    private string name;
+    public Button( int top,  int left, string name)
+        : base(top, left)
+    {
+        this.name = name;
+    }
+   
+    public override void DrawWindow()
+    {
+        Console.WriteLine("button {0} at {1}, {2}\n", name,top, left);
+    }
+}    
+
+
+public class Test
+{
+    static void Main()
+    {
+        Window[] winArray = new Window[4];
+        winArray[0] = new TextBox(1, 2, "First Text Box");
+        winArray[1] = new TextBox(3, 4, "Second Text Box");
+        winArray[2] = new Button(5, 6, "Open");
+        winArray[3] = new Button(9, 10, "Close");
+        for (int i = 0; i < 4; i++)
+        {
+            winArray[i].DrawWindow();
+        }
+        Console.WriteLine();
+        Panel panel = new Panel(0, 0);
+        panel.Dodaj(winArray[0]);
+        panel.Dodaj(winArray[1]);
+        panel.Dodaj(winArray[2]);
+        panel.Dodaj(winArray[3]);
+
+        panel.DrawWindow();
+
+
+        Console.ReadKey();
+    }    
+}        
+
+</window></window>
+
+
+
+Zadanie 2
+
+Poni¿szy "pseudobiektowy" przyk³ad przepisz stosuj¹c dziedziczenie i funkcje wirtualne (zwierze powinno mieæ g³os). Dodaj inne trenowane umiejêtnoœci (np. skoki). Dodaj metodê ToString. Umieœæ zwierzêta w osobnej bibliotece. W programie g³ównym dodaj definicje nowego zwierzêcia np. wê¿a.
+
+class Zwierze
+{
+// a co bêdzie jeœli zwierzêta maja swoje charakterystyczne cechy???
+    public string rodzaj;
+    public Zwierze(string r)
+    {
+        rodzaj = r;
+    }
+}
+
+class Trener
+{
+    public static void DajGlos(Zwierze z)
+    {
+// a co bêdzie gdy pojawi¹ sie inne zwierzêta???
+        switch (z.rodzaj)
+        {
+            case "pies": Console.WriteLine("hau"); break;
+            case "kot": Console.WriteLine("miau"); break;
+            default: Console.WriteLine("???"); break;
+        }
+    }
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+        Zwierze p = new Zwierze("pies");
+        Zwierze k = new Zwierze("kot");
+        Zwierze m = new Zwierze("mysz");
+        Trener.DajGlos(p);
+        Trener.DajGlos(k);
+        Trener.DajGlos(m);
+    }
+   
+}
+
+
+ 
+
+
+
+Zadanie 3
+Dla klasy House zaimplementuj interfejs IComparable (wed³ug roku budowy a w przypadku tego samego roku po cenie). Dodaj metodê ToString. Dodaj tak¿e klasê implementuj¹c¹ IComparer do porównywania po powierzchni domu. Napisz program ilustruj¹cy sortuj¹cy tablicê domów.
+
+[code c#]
+class House : IComparable
+{
+        private decimal price;
+        private int year;
+        private double squareMeters;
+
+        public House(decimal price, int year, double squareMeters)
+        {
+            this.price = price;
+            this.year = year;
+            this.squareMeters = squareMeters;
+        }
+//?
+}
+[/code]
+
+
+Zadanie 4.
+Klasa String ma ju¿ zaimplementowany interfejs IComparable. Dla klasy String zaimplementuj interfejs IComparer, który zapewni inne kryterium porz¹dkowania (d³ugoœæ napisu, odwrotna kolejnoœæ, po tekstach wspak). Napisz program ilustruj¹cy sortowanie tablicy stringów na dwa ró¿ne sposoby.
+
+
+Zadanie 5.
+a. Zdefiniuj dwa interfejsy IMovable (do startowania i zatrzymywania) oraz ISteerable (do skrêcania), a nastêpnie zaimplementuj oba te interfejsy w jednej klasie Car. Dodaj te¿ metodê ToString.
+b. Dodatkowo wyprowadŸ klasê Car tak¿e z klasy MotorVehicle. Dodaj interfejs IAccelerable do przyspieszania i zwalniania.
+
+[code c#]
+class MotorVehicle
+{
+    private string description;
+    private int maxSpeed;
+
+    public MotorVehicle(string description, int maxSpeed)
+    {
+        this.description = description;
+        this.maxSpeed = maxSpeed;
+    }
+
+   
+    public string Description
+    {
+        get
+        {
+            return description;
+        }
+    }
+
+    public int MaxSpeed
+    {
+        get
+        {
+            return maxSpeed;
+        }
+    }
+}
+[/code]
+
+
+Zadanie 6
+
+a. Mamy klasê Book. W naszym sklepie oprócz ksi¹¿ek bêdziemy przechowywaæ p³yty CD, p³yty DVD a byæ mo¿e jeszcze inne produkty. Napisz klasê abstrakcyjn¹ Item bazow¹ dla wszystkich produktów (ka¿dy produkt ma cenê i tytu³ oraz powinien udostêpniaæ wartoœæ podatku VAT). Nadpisz odpowiedni¹ metodê ToString. Klasa Item powinna implementowaæ interfejs IComparable (po cenie). Zdefiniuj tak¿e klasê implementuj¹c¹ interfejs IComparer do porównywania po tytule. Nastepnie zdefiniuj klasy pochodne Book(ponownie) CD i DVD. W klasach pochodnych zdefiniuj dodatkowe pola, zdefiniuj tak¿e mo¿liwoœæ porównywania po tych polach (IComparer).
+
+b. Dodaj do istniej¹cego rozwi¹zania klasy adaptuj¹ce klasy Ticket i Coffe (klasy te s¹ dostêpne w gotowych bibliotekach). Stwórz interfejs IItem który zawiera podstawowe metody z klasy Item. Klasy adapterów wyprowadŸ z tego interfejsu.
+
+[code c#]
+
+  class Book
+    {
+        protected string title;
+        protected string author;
+        protected double price;
+        protected string ISBN;
+        protected uint pageNumber;
+        protected string publisher;
+
+        public double returnPriceBrutto
+        {
+            get { return price * 1.08; }
+        }
+
+        public Book(string title, string author, string ISBN, uint pageNumber, string publisher, double price)
+        {
+            this.price = price;
+            this.title = title;
+            this.author = author;
+            this.ISBN = ISBN;
+            this.pageNumber = pageNumber;
+            this.publisher = publisher;
+           
+        }
+
+        public override string ToString()
+        {
+            return string.Format("{0} {1} {2} {3} {4}", title, author, ISBN, pageNumber, price);
+        }
+
+        public double VAT()
+        {
+            return returnPriceBrutto - price;
+        }
+     
+
+    }
+
+[/code]
+
+
+klasa Coffee
+
+[code C#]
+namespace Coffee
+{
+    public class Coffee
+    {
+        public string Name;
+        public string Producer;
+        public double PriceNet;
+
+        public Coffee(string Name, string Producer, double PriceNet)
+        {
+            this.Name = Name;
+            this.Producer = Producer;
+            this.PriceNet = PriceNet;
+        }
+
+        public string GetInfo()
+        {
+            return string.Format("{0} {1} {2}", Name, Producer, PriceNet);
+        }
+
+    }
+}
+[/code]
+
+klasa Ticket
+
+[code c#]
+namespace Bilety
+{
+    public class Ticket
+    {
+        public string Band;
+        public string ConcertName;
+        public double Price;
+
+        public Ticket()
+        {
+        }
+
+        public Ticket(string band, string concertName, double price)
+        {
+            Band = band;
+            ConcertName = concertName;
+            Price = price;
+        }
+
+        public string ConcertInfo()
+        {
+            return string.Format("{0} {1} {2}", Band, ConcertName, Price);
+        }
+
+    }
+}

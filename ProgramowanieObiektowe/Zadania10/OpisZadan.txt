@@ -1,0 +1,188 @@
+Zadanie 1.
+Napisaæ strukturê Zespolona do obs³ugi liczb zespolonych. Przeci¹¿yæ odpowiednie operatory: true i false, - jednoargumentowy, ~ jako sprzê¿enie, ! jako modu³, +, - , *, /  , ==, !=.
+
+[code c#]
+
+public struct Zespolona
+{
+    double real, imag;//pola
+
+    public double Real
+    {get{return real;}}
+     
+       public double Imag
+    {get{return imag;}}
+         
+    //konstruktor
+    public Zespolona(double real, double imag)
+    {
+        this.real = real;
+        this.imag = imag;
+    }
+
+    // konstruktor CreateFromPolar, dodatkowy parametr bo te¿ double, double
+    public Zespolona(double promien, double argument, int i)
+    {
+        real = promien * System.Math.Cos(argument);
+        imag = promien * System.Math.Sin(argument);
+    }
+
+//inne metody
+
+    // ToString
+    public override string ToString()
+    {
+        string s = Real.ToString();
+        if (Imag >= 0) s += "+i"; else s += "-i";
+        s += Math.Abs(Imag);
+        return s;
+    }
+}
+[/code]
+
+Zadanie 2.(dom)
+Napisaæ strukturê Wektor do obs³ugi wektorów 3 wymiarowych. Dodaæ operatory - jednoargumentowy, + -, * i / do mno¿enia i dzielenia przez skalar , == i != (nadpisaæ te¿ Equals i GetHashCode), ~ do wyznaczania modu³u, ! do normowania wektora, ^ iloczyn skalarny, * iloczyn wektorowy, operatory > < (porównywanie d³ugoœci), true i false oraz >> <<, te ostatnie maj¹ dodawaæ lub odejmowaæ wartoœæ od ka¿dej wspó³rzêdnej.
+(wsk. rozpocznij od kodów z wyk³adu)
+
+Zadanie 3.
+Napisaæ klasê Piksel do obs³ugi punktu o wspó³rzêdnych ca³kowitych (int) na p³aszczyŸnie. Napisz przeci¹¿ony operator  ==, != oraz metodê Equals. Operatory ++, --, true, flase oraz & i |.W klasie Piksel dodaj operator konwertuj¹cy Piksel na Zespolona i odwrotnie.
+[code c#]
+class Piksel
+{
+    int x, y;
+
+    public Piksel()
+    {
+        x = y = 0;
+    }
+    public Piksel(int i, int j)
+    {
+        x = i;
+        y = j;
+    }
+    public override string ToString()
+    {
+        return "<" + x + ", " + y + ">";
+    }
+
+}
+[/code]
+
+
+Zadanie 4.(dom)
+Napisaæ klasê Macierz do obs³ugi macierzy kwadratowych 2x2, przeci¹¿yæ dla niej operatory ==, +, -, *. Jak okreœliæ dzielenie ? Dodaæ kilka przydatnych metod.
+[code c#]
+class Macierz2x2
+{
+    double a11, a12, a21, a22;
+
+    public Macierz2x2()
+        : this(0, 0, 0, 0)
+    {
+    }
+
+    public Macierz2x2(double a, double b, double c, double d)
+    {
+        a11 = a;
+        a12 = b;
+        a21 = c;
+        a22 = d;
+    }
+
+    public double this[int i, int j]
+    {
+        get
+        {
+            if (i == 0 && j == 0) return a11;
+            if (i == 0 && j == 1) return a12;
+            if (i == 1 && j == 0) return a21;
+            if (i == 1 && j == 1) return a22;
+            return Double.NaN;
+        }
+    }
+
+// inne metody
+
+   //toString
+    public override string ToString()
+    {
+        return "|\t" + a11 + "\t" + a12 + "\t|\n" +
+               "|\t" + a21 + "\t" + a22 + "\t|\n";
+    }
+}
+[/code]
+
+Zadanie 5
+Napisaæ w³asn¹ klasê SuperString, podobn¹ do String (wykorzystaæ zawieranie - tablicê char albo StringBuilder albo bezpoœrednio string). Dla tej klasy zdefiniowaæ przeci¹¿one operatory, operatory <;<=; >;>=, operator ! odwracaj¹cy napis, operator >> skracaj¹cy napis i << dopisuj¹cy spacje. Dodaæ operatory konwersji (jawnej czy niejawnej?) miêdzy SuperString a String
+
+Zadanie 6 (dom)
+Napisaæ strukturê SuperBool (True, False, Neutral) do obs³ugi logiki trójwartoœciowej. Zdefinowaæ odpowiednie operatory. Napisac odpowiednie konwersje z klas¹ Bool.
+
+Zadanie 7.
+Dla klasy Faktura zaimplementowaæ interfejs IComparable operatory  >, <, >=, <= w sposób spójny. Ponadto zdefiniowaæ operatory + jednoargumentowy suma wartoœci pozycji, + dwuargumentowy dodawanie pozycji o raz wersjê z dodawaniem faktur.  Zdefiniowaæ tak¿e operatory ==, !=. Dodac nastêpnie klasê pochodn¹ Fakturadatowana i sprawdziæ jak dla tej klasy dzia³aj¹ zdefiniowane operatory.
+[code c#]
+struct Pozycja
+{
+    string nazwa;
+    int cena;
+
+    public int Cena
+    {
+        get { return cena; }
+    }
+
+    public Pozycja(string nazwa, int cena)
+    {
+        this.nazwa=nazwa;
+        this.cena=cena;
+    }
+
+    public override string ToString()
+    {
+        return nazwa+" cena: "+ cena;
+    }
+}
+
+class Faktura : IComparable
+{
+    protected string nazwa;
+    protected int numer;
+    protected List<Pozycja> pozycje = new List<Pozycja>();
+
+    public Faktura(string name, int id)
+    {
+        this.nazwa = name;
+        this.numer = id;
+    }
+
+// inne metody
+
+    public override string ToString()
+    {
+        String s = nazwa + ":" + numer;
+        foreach (Pozycja p in pozycje) s += "\n" + p;
+        return s+"\n\n";
+    }
+}
+[/code]
+
+Zadanie 8. (dom)
+Dla klasy Pracownik zaimplementowaæ interfejs IComparable oraz zdefiniowaæ operatory >, <, >=, <= w sposób spójny. Zdefiniowac tak¿e operatory ==, !=. Dodac nastêpnie klasê pochodn¹ PracownikKontraktowy i sprawdziæ jak dla tej klasy dzia³aj¹ zdefiniowane operatory.
+[code c#]
+public class Pracownik : IComparable
+{
+    protected string nazwisko;
+    protected int id;
+
+    public Pracownik(string name, int id)
+    {
+        this.nazwisko = name;
+        this.id = id;
+    }
+
+// inne metody
+    public override string ToString()
+    {
+        return (nazwisko + ":" + id);
+    }
+}

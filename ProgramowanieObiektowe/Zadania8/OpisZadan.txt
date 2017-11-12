@@ -1,0 +1,134 @@
+Zadanie 0
+Dla klasy Student (imiê, nazwisko, wiek, numerIndeksu) zaimplementuj ogólny interfejs IComparable<Student>  oraz klasy do porównywania implementuj¹ce IComparer<Student>
+
+
+
+class Student
+{
+    string imiê;
+    string nazwisko;
+    int numerIndeksu;
+    int wiek;
+
+    public Student(string im, string na, int w, int ind)
+    {
+        imiê = im;
+        nazwisko = na;
+        wiek = w;
+        numerIndeksu = ind;
+    }
+
+    public string Imiê
+    {
+        get { return imiê; }
+    }
+    public string Nazwisko
+    {
+        get { return nazwisko; }
+    }
+    public int Wiek
+    {
+        get { return wiek; }
+    }
+    public int NumerIndeksu
+    {
+        get { return numerIndeksu; }
+    }
+
+    public override string ToString()
+    {
+        return String.Format("student {0} {1} lat {2} indeks numer:{3}",imiê, nazwisko, wiek, numerIndeksu);
+    }  
+}
+
+
+ 
+
+
+Zadanie 1
+Napisaæ prost¹ klasê ogóln¹ przeznaczonej do przechowywania pola o dowolnym typie danych wraz z opisem (opis to string) i napisaæ dla niej metody wyœwietlaj¹c¹ pole i kilka innych metod. Zilustrowaæ u¿ycie przyk³adami.
+
+Zadanie 2
+Napisaæ prost¹ w³asn¹ kolejkê ogóln¹ opart¹ na tablicy (o ograniczonej wielkoœci, gdy braknie miejsca zg³oœ wyj¹tek).
+
+Zadanie 3
+Napisaæ metodê ogóln¹ zliczaj¹c¹ w tablicy dowolnego typu (dla którego mamy zdefiniowane porównywanie przez IComparable) liczbê elementów o wartoœci równej pewnej zadanej wartoœci. Dodatkowo proszê napisaæ metodê ogóln¹ obliczaj¹c¹ liczbê elementów o wartoœci równej pewnej zadanej wartoœci z parametrem IComparer. Zilustrowaæ u¿ycie przyk³adami (int, string, Student).
+
+Zadanie 4
+Napisaæ metodê ogóln¹ obliczaj¹c¹ maksymaln¹ wartoœæ w tablicy dowolnego typu (dla którego mamy zdefiniowane porównywanie elementów przez IComparable). Dodatkowo proszê napisaæ metodê ogóln¹ obliczaj¹c¹ maksymaln¹ wartoœæ w tablicy dowolnego typu z parametrem IComparer. Zilustrowaæ program przyk³adami (int, string, Student).
+
+Zadanie 5
+Mamy klasê test. Proszê przerobiæ j¹ na sensown¹ klasê ogóln¹ do u¿ycia ze strukturami (a nie tylko double). Zilustrowaæ u¿ycie przyk³adami (int, float, struktura Para ? para liczb ca³kowitych - zdefiniuj dla Pary porównywanie).
+
+[code c#]
+class Test
+{
+int rozmiar;
+double wartosc;
+double [] wsk;
+public Test(int roz )
+    {
+        if (roz <= 0) roz = 1;
+        wsk = new double[roz];
+        rozmiar = roz;
+        for (int i=0 ; i<roz ; i++) wsk[i] = 0;
+        wartosc = 0.0;
+    }
+public int Rozmiar() { return rozmiar; }
+    public double this[int index]
+    {
+        get {
+            if(index<0 || index> rozmiar-1)
+            {
+                throw (new Exception())  ;
+            }
+            return wsk[index];
+        }
+        set {
+            if (index < 0 || index > rozmiar - 1)
+            {
+                throw (new Exception());
+            }
+            wsk[index] = value;
+        }
+    }
+ 
+    public double GetWartosc()  {return wartosc;}
+    public void SetWartosc(double war) {wartosc = war;}
+    public int Oblicz () // ile elementów mniejszych od wartoœci
+    {
+        int licz=0;
+        for (int i=0 ; i<rozmiar ; i++)
+            if (wsk[i] <= wartosc) licz++;
+        return licz;
+    }
+}
+[/code]
+
+Zadanie 6
+Mamy interfejs:
+[code c#]
+interface IDodawalny <T>
+{
+    T Dodaj(T b);
+}
+[/code]
+Zdefiniuj klasê ogóln¹ Sumator z metod¹ do sumowania dowolnych tablic których elementy implementuj¹ interfejs IDodawalny. Utwórz kilka klas implementuj¹cych ten interfejs i zilustruj dzia³anie klasy Sumator.
+
+Zadanie 7
+Napisaæ klasê na bazie kolekcji (jak¹ kolekcjê wykorzystaæ?) wypisuj¹c¹ czêstoœæ (histogram) wprowadzonych z klawiatury liczb dodatnich (0 koñczy wczytywanie).
+
+Zadanie 8
+Napisaæ program wczytuj¹cy z klawiatury zdania do kolekcji (jak¹ kolekcjê wykorzystaæ?)  a nastêpnie odwracaj¹cy poszczególne zdania (zak³adamy spacje jako separator)  oraz odwracaj¹cy kolejnoœæ zdañ (po ka¿dym zdaniu wbijany jest enter) Wbicie pustego zdania koñczy wczytywanie.  Np. "Ala ma kota"  "Kot ma Alê"  na  "Alê ma Kot", " kota ma Ala". Na koniec nale¿y wyœwietliæ wynik.
+
+Zadanie 9
+Napisaæ w³asn¹ klasê ogóln¹ Stos (operacje Po³ó¿, Podejrzyj, Zdejmij, CzyPusty) wykorzystuj¹c zawierania ogólnej kolekcji List<T>.
+
+Zadanie 10
+Napisaæ w³asn¹ klasê ogóln¹ Kolejka (operacje Dodaj, Podejrzyj, Usuñ, CzyPusta) wykorzystuj¹c zawierania ogólnej kolekcji List<T>.
+
+Zadanie 11
+Napisaæ w³asn¹ klasê ogóln¹ StosLimitowany<T> gdzie T IComparable<T>, wykorzystuj¹c dziedziczenie ogólnej kolekcji Stack<T>. Jaki jest problem implementacji z dziedziczeniem?
+
+Zadanie 12
+Napisaæ w³asn¹ klasê ogóln¹ KolejkaOgraniczona (mo¿e zawieraæ ograniczon¹ liczbe elementów) wykorzystuj¹c dziedziczenie ogólnej kolekcji Queue<T>. Jaki jest problem implementacji z dziedziczeniem?

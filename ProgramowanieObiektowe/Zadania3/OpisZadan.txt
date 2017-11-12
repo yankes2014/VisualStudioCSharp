@@ -1,0 +1,61 @@
+Zadanie 1
+Mamy klasê tablica.
+
+class Tablica
+{
+        private double[] tablica;
+// mozna definiowaæ tak
+// private double[] tablica = new double[20];
+        public void Wypisz()
+        {
+            for (int i = 0; i < tablica.Length; i++)
+            {
+                Console.Write("{0}  ", tablica[i]);
+            }          
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Tablica t = new Tablica();
+            t.Wypisz();          
+            Console.ReadKey();
+        }
+    }
+
+ 
+
+   
+W klasie Tablica dopisz kolejno
+Konstruktor który mo¿e ustawiæ rozmiar tablicy.
+Indeksery: pobieranie i-tego elementu, wstawianie i-tego elementu,
+metody: podawanie rozmiaru, wyszukiwanie elementu o podanej wartoœci, sumowanie elementów.
+
+Zadanie 2 (dom)
+Napisaæ klasê Europe z dwuwymiarowym indeksatorem zwracaj¹cym nazwy stolicy le¿¹cej w odpowiednich wspó³rzêdnych geograficznych, tak aby klient klasy móg³ napisaæ:
+Europe UE = new Europe();
+string nazwa = EU[15.1, 52.4];
+Indeksator powinien przyjmowaæ jako parametry liczby rzeczywiste i zwracaæ nazwy stolicy le¿¹cej najbli¿ej podanych wspó³rzêdnych (uwaga obliczamy w sposób uproszczony a nie przy pomocy wzorów dla ortodromy). W wewnêtrznych strukturach klasy przechowaæ 27 miejscowoœci (albo trochê mniej!).
+Spróbuj zrobiæ coœ odwrotnego klasê Coordinates tak¹, ¿e np.:
+Dla Coordinates co, co["Warszawa"] zwróci parê liczb 52.1, 21.0.
+
+
+Zadanie 3.
+Opracowaæ klasê Operacje która ma metody do obliczania silni, pierwiastka kwadratowego, podnoszenia do potêgi trzeciej itp. Na liczbach typu int (pierwiastek zaokr¹glamy do liczby ca³kowitej). Metody powinny zwracaæ rozszerzony typ int (null jeœli operacja nie jest wykonalna, przekracza zakres itp.).
+
+Zadanie 4.(dom)
+Opracowaæ klasê do obliczeñ (+, -, *, /, %, odpowiednio metody Dodaj, Odejmij, Podziel, Reszta) na rozszerzonym typie int. (okreœliæ samodzielnie co oznacza null + wartoœæ itd.).
+
+Zadanie 5.
+Opracowaæ klasê ZbiórZapisów do przechowywania zapisów. W klasie ZbiórZapisów zdefiniuj klasy zagnie¿d¿one  Zapis oraz Licznik maj¹ one byæ niewidoczne na zewn¹trz. Proszê napisaæ implementacje tych klas.
+
+Zadanie 6. (dom)
+Opracowaæ klasê Konto, klasa powinna przechowywaæ numer i stan konta. Musz¹ byæ zdefiniowane konstruktory (powinny wykorzystywaæ inne konstruktory). W klasie Konto zdefiniowaæ klasy zagnie¿d¿one Operacja i ListaOperacji. Operacja powinna przechowywaæ datê i wartoœæ operacji, nie mog¹ one byæ zmieniane (pola readonly).
+
+
+Zadanie 7.
+Zbadaj wydajnoœæ operacji na tekstach: operatora + dla stringu, metody statycznej Concat dla stringu oraz metody Append dla StringBuilder. U¿ytkownik podaje tekst np. ?Ala ma kota?. Program tworzy tekst ³¹cz¹cy 10, 100, 1000, 10000 razy podany tekst (mo¿na u¿yæ klasy Stopwatch).
+
+Zadanie 8. (dom)
+Opracowaæ klasê Tekst która ma cechy klas String i StringBuilder wykorzystuj¹c tablice char jako bufor. Nale¿y zaimplementowaæ sensowne konstruktory. Nastepnie napisaæ metody ZamieñNaString(), D³ugoœæ(), Odwróæ(), IleRazyWystepuje(char c), UsunZnak(char c), Dodaj(string s). Metody maj¹ dzia³aæ na obiekcie klasy Tekst a nie tworzyæ nowego obiektu, jedynie gdy zabraknie miejsca tworzony jest nowy bufor a zawartoœc przepisywana. Mo¿na dodaæ wiêcej metod podobnych do tych jakie ma String i StringBuilder.

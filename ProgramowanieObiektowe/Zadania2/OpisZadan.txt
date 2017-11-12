@@ -1,0 +1,66 @@
+Zadanie 1
+
+Dla struktury Zespolona z zadania domowego zaimplementuj metody statyczne i w³aœciwoœci.
+
+Zadanie 2
+Opracuj klasê (strukturê) Prostok¹t bazuj¹c¹ na dwóch Punktach (prostok¹t ma zawsze boki równoleg³e do osi wspó³rzêdnych).
+
+    //
+    //      ------------p2
+    //      |            |
+    //      |            |
+    //      p1-----------
+    //
+
+Opracuj zestaw metod (tak¿e konstruktorów) dla takiej klasy, tak¿e metody statyczne i w³aœciwoœci. Uwzglêdnij tworzenie prostok¹ta bêd¹cego czêœci¹ wspóln¹ dwóch prostok¹tów i prostok¹ta zawieraj¹cego dwa podane prostok¹ty.
+Rozwa¿ inne mo¿liwe reprezentacje Prostok¹ta (np. opart¹ o Punkt i d³ugoœci boków).
+
+
+Zadanie 3 (dom)
+
+Napisaæ prost¹ klasê symuluj¹c¹ kalkulator (wystarcz¹ cztery dzia³ania i mo¿liwoœæ zapisu wyniku do pamiêci). Dla klasy Kalkulator opracuj najpierw wersjê z metodami niestatycznymi a nastêpnie z metodami statycznymi. Czy Kalkulator jest lepszy z metodami statycznymi ni¿ bez metod statycznych?
+
+Zadanie 4
+Napisz klasê Macierz do obs³ugi macierzy 2X2 (o wartoœciach rzeczywistych). Nie korzystaj z tablic. Dodaj odpowiednie metody (mno¿enie przez sta³¹, dodawanie dwóch macierzy, mno¿enie itp.). Staraj siê zaprojektowaæ metody statyczne.
+
+Zadanie 5
+Opracowaæ metodê rozszerzaj¹c¹ (rozszerzon¹) dla typu int s³u¿¹c¹ do zamiany liczby z systemu dziesiêtnego na  zapis (string) w innym systemie o podstawie < 10.
+
+Zadanie 6 (dom)
+Opracowaæ metodê rozszerzon¹ dla typu double s³u¿¹c¹ do uproszczenia dzia³añ na liczbach double (potêgowanie, obliczanie sinus, cosinus, dodawanie, odejmowanie itp.).
+
+Zadanie 7
+Twoim zadaniem jest stworzenie biblioteki, który u³atwi pos³ugiwanie siê ró¿nymi jednostkami dla tych samych pojêæ. Biblioteka ta ma byæ póŸniej u¿ywana ró¿nych projektach. Mamy wykorzystaæ w³aœciwoœci.
+Nale¿y uwzglêdniæ nastêpuj¹ce pojêcia i ich jednostki:
+iloœæ
+kopa  60
+tuzin  12
+mendel  15
+d³ugoœæ
+metr
+milimetr  0,001 metra
+cal  25,4 milimetra
+yard  0,9144 metra
+mila morska  1 852 metrów
+mila angielska  1609,344 metra
+masa
+kilogram
+gram  0,001 kilograma
+tona  1000 kilogramów
+kwintal  100 kilogramów
+funt brytyjski  0,453592
+uncja  28,35 grama
+temperatura
+Kelvin
+stopnie Celsjusza  -273,15 + liczba stopni w skali Kelvina
+stopnie Fahrenheita  32 + 9/5 * liczba stopni w skali Celsjusza
+moc
+wat
+koñ mechaniczny  735,498 watów
+objêtoœæ
+metr szeœcienny
+litr  0,001 metra szeœciennego
+kwaterka  0,25 litra
+galon angielski  4,5456 litra
+
+Utwórz program przeliczaj¹cy jednostki z wykorzystaniem przygotowanej biblioteki.

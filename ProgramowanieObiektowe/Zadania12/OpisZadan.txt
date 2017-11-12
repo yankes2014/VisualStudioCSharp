@@ -1,0 +1,368 @@
+Zadanie 1
+Mamy klasê Osoba. Zserializuj binarnie obiekt klasy Osoba.
+Serializowane maj¹ byæ tylko: nazwisko, imiê i PESEL.
+Nastêpnie utwórz listê osób i zilustruj dzia³anie serialiacji na liœcie.
+[code c#]
+public class Osoba
+{
+    int pesel;
+    string nazwisko;
+    string imie;
+    double dochód; // 0 znaczy brak 
+
+    public Osoba(string imiê, string nazwisko, int pesel)
+    {
+        this.pesel = pesel;
+        this.nazwisko = nazwisko;
+        this.imie = imiê;
+    }
+
+    public double Dochód
+    {
+        get { return dochód; }
+        set { if (value >= 1.0 ) dochód = value; }
+    }
+
+    public override string ToString()   
+    {
+        return  String.Format("PESEL = '{0}' ", pesel) +
+        String.Format("Nazwisko = '{0}' ", nazwisko)+
+        String.Format("Imie = '{0}' ", imie)+
+        String.Format("Dochód = '{0}' ", dochód>=1.0 ? dochód.ToString() : "brak");
+    }
+}
+[/code]
+
+Zadanie 2 [dom]
+Mamy klasê Komputer. Zserializuj binarnie obiekt klasy Komputer.
+Serializowane ma byæ tylko: marka.
+Nastêpnie utwórz listê komputerów i zilustruj dzia³anie serialiacji na liœcie.
+[code c#]
+class Komputer
+{
+    private double cena;
+    private string marka;
+
+    public Komputer(string marka, double cena)
+    {
+        this.cena = cena;
+        this.marka = marka;
+    }
+
+    public double Cena
+    {
+        get { return cena; }
+        set { cena = value; }
+    }
+
+    public string Marka
+    {
+        get { return marka; }
+    }
+
+    public override string ToString()
+    {
+        return marka + " " + cena;
+    }
+}
+[/code]
+
+
+Zadanie 3
+Mamy klasy Adres i Osoba (jak w zadaniu 1, ale do klasy Osoba dodano pole adres).
+Zserializuj binarnie obiekt klasy Osoba.
+Serializowane maj¹ byæ tylko: nazwisko, imiê i PESEL oraz adres.
+Nastêpnie utwórz listê osób i zilustruj dzia³anie serialiacji na liœcie.
+
+[code c#]
+public class Adres
+{
+    string miejscowoœæ;
+    string ulica;
+    int numerBudynku;
+
+    public Adres(string m, string u, int n)
+    {
+        miejscowoœæ = m;
+        ulica = u;
+        numerBudynku = n;
+    }
+
+    public override string ToString()
+    {
+        return String.Format("'{0} ul. {1} numer {2}'", miejscowoœæ, ulica, numerBudynku);
+    }
+}
+
+public class Osoba
+{
+    int pesel;
+    string nazwisko;
+    string imie;
+    double dochód; // 0 znaczy brak 
+
+    Adres adres;
+
+    public Osoba(string imiê, string nazwisko, int pesel, Adres adres)
+    {
+        this.pesel = pesel;
+        this.nazwisko = nazwisko;
+        this.imie = imiê;
+        this.adres = adres;
+    }
+
+    public double Dochód
+    {
+        get { return dochód; }
+        set { if (value >= 1.0) dochód = value; }
+    }
+
+    public override string ToString()
+    {
+        return String.Format("PESEL = '{0}' ", pesel) +
+        String.Format("Nazwisko = '{0}' ", nazwisko) +
+        String.Format("Imie = '{0}' ", imie) +
+        String.Format("Dochód = '{0}' \n", dochód >= 1.0 ? dochód.ToString() : "brak") + adres;
+    }
+}
+
+[/code]
+
+Zadanie 4 [dom]
+Mamy klasê Komputer i Producent. Zserializuj binarnie obiekt klasy Komputer. Serializowane ma byæ tylko: marka. Nastêpnie utwórz listê komputerów i zilustruj dzia³anie serialiacji na liœcie.
+[code c#]
+class Producent
+{
+    string nazwa;
+    string kraj;
+    int kod;
+
+    public Producent(string n, string c, int k)
+    {
+        nazwa = n;
+        kraj = c;
+        kod = k;
+    }
+
+    public override string ToString()
+    {
+        return String.Format("'{0}  {1} kod {2}'", nazwa, kraj, kod);
+    }
+}
+
+class Komputer
+{
+    private double cena;
+    private string marka;
+    Producent producent;
+
+    public Komputer(string marka, double cena, Producent producent)
+    {
+        this.cena = cena;
+        this.marka = marka;
+        this.producent = producent;
+    }
+
+    public double Cena
+    {
+        get { return cena; }
+        set { cena = value; }
+    }
+
+    public string Marka
+    {
+        get { return marka; }
+    }
+
+    public override string ToString()
+    {
+        return marka + " " + cena + " " + producent;
+    }
+}
+[/code]
+
+
+Zadanie 5
+Mamy klasy Adres i Osoba (jak w zadaniu 3) i klasê Student pochodn¹ od osoby.  Zserializuj binarnie obiekt klasy Student. Serializowane maj¹ byæ tylko: nazwisko, imiê i PESEL oraz adres a ze studenta kierunek i numer indeksu. Nastêpnie utwórz listê osób, która zawiera tak¿e studentów i zilustruj dzia³anie serialiacji na liœcie.
+
+[code c#]
+public class Student : Osoba
+{
+    string kierunek;
+    int numerIndeksu;
+
+    public Student(string imiê, string nazwisko, int pesel, Adres adres, string kierunek, int numer)
+        :base(imiê, nazwisko, pesel, adres)
+    {
+        this.kierunek = kierunek;
+        this.numerIndeksu = numer;
+    }
+
+    public override string ToString()
+    {
+        return base.ToString() + "\nstudent " + kierunek +" " + numerIndeksu;
+    }
+}
+[/code]
+
+Zadanie 6 [dom]
+Mamy klasê Producent, Komputer oraz klasê pochodn¹ Laptop. Zserializuj binarnie obiekt klasy Komputer. Serializowane ma byæ tylko: marka. Nastêpnie utwórz listê komputerów oraz laptopów i zilustruj dzia³anie serialiacji na liœcie.
+[code c#]
+class Producent
+{
+    string nazwa;
+    string kraj;
+    int kod;
+
+    public Producent(string n, string c, int k)
+    {
+        nazwa = n;
+        kraj = c;
+        kod = k;
+    }
+
+    public override string ToString()
+    {
+        return String.Format("'{0}  {1} kod {2}'", nazwa, kraj, kod);
+    }
+}
+
+class Komputer
+{
+    private double cena;
+    private string marka;
+    Producent producent;
+
+    public Komputer(string marka, double cena, Producent producent)
+    {
+        this.cena = cena;
+        this.marka = marka;
+        this.producent = producent;
+    }
+
+    public double Cena
+    {
+        get { return cena; }
+        set { cena = value; }
+    }
+
+    public string Marka
+    {
+        get { return marka; }
+    }
+
+    public override string ToString()
+    {
+        return marka + " " + cena + " " + producent;
+    }
+}
+
+class Laptop : Komputer
+{
+    string opis;
+    int waga;
+
+    public Laptop(string marka, double cena, Producent producent, string opis, int waga)
+        :base(marka, cena, producent)
+    {
+        this.opis = opis;
+        this.waga = waga;
+    }
+
+    public override string ToString()
+    {
+        return base.ToString() + "\ntyp laptop " + opis +" " + waga;
+    }
+
+}
+
+[/code]
+
+Zadanie 7
+Mamy klasy Adres, Osoba i klasê Student pochodn¹ od osoby (jak w zadaniu 5). Serializowane maj¹ byæ tylko: nazwisko, imiê, adres i PESEL oraz adres i pola charakterystyczne dla studenta. PESEL powinien byæ szyfrowany w czasie serializacji. Zastosuj interfejs ISerializable. Utwórz listê osób, która zawiera tak¿e studentów i zilustruj dzia³anie serialiacji na liœcie.
+
+Zadanie 8 [dom]
+Mamy klasê Producent, Komputer oraz klasê pochodn¹ Laptop. Serializowane ma byæ tylko: marka. Marka powinna byæ szyfrowana w czasie serializacji. Zastosuj interfejs ISerializable. Nastêpnie utwórz listê komputerów oraz laptopów i zilustruj dzia³anie serialiacji na liœcie.
+
+Zadanie 9
+Mamy klasy Adres, Osoba i klasê Student pochodn¹ od osoby (jak w zadaniu 5). Serializowane maj¹ byæ tylko: nazwisko, imiê i PESEL oraz adres i pola charakterystyczne dla studenta. PESEL powinien byæ szyfrowany w czasie serializacji. Zastosuj atrybuty serializacji. Utwórz listê osób, która zawiera tak¿e studentów i zilustruj dzia³anie serialiacji na liœcie.
+
+Zadanie 10 [dom]
+Mamy klasê Producent, Komputer oraz klasê pochodn¹ Laptop. Serializowane ma byæ tylko: marka. Marka powinna byæ szyfrowana w czasie serializacji. Zastosuj atrybuty serializacji. Nastêpnie utwórz listê komputerów oraz laptopów i zilustruj dzia³anie serialiacji na liœcie.
+
+Zadanie 11
+Dla klasy Osoba napisz serializacjê XML tak aby pesel by³ atrybutem a pozosta³e pola elementami. A) Zamieñ pola na publiczne. B)Spróbuj z polami prywatnymi implementuj¹c IXmlSerializable.
+
+[code xml]
+< ?xml version="1.0"?>
+< Osoba PESEL="22334455">
+  <Nazwisko>Warszawski</Nazwisko>
+  <Imie>Waldemar</Imie>
+  <Dochód>855,5</Dochód>
+< /Osoba>
+[/code]
+
+[code c#]
+public class Osoba
+{
+    int pesel;
+    string nazwisko;
+    string imie;
+    double dochód; // 0 znaczy brak 
+
+    public Osoba(string imiê, string nazwisko, int pesel)
+    {
+        this.pesel = pesel;
+        this.nazwisko = nazwisko;
+        this.imie = imiê;
+    }
+
+    public double Dochód
+    {
+        get { return dochód; }
+        set { if (value >= 1.0) dochód = value; }
+    }
+
+    public override string ToString()
+    {
+        return String.Format("PESEL = '{0}' ", pesel) +
+        String.Format("Nazwisko = '{0}' ", nazwisko) +
+        String.Format("Imie = '{0}' ", imie) +
+        String.Format("Dochód = '{0}' ", dochód >= 1.0 ? dochód.ToString() : "brak");
+    }
+}
+[/code]
+
+
+
+Zadanie 12 [dom]
+Dla klasy Komputer napisz serializacjê XML implementuj¹c IXmlSerializable.
+
+[code c#]
+public class Komputer
+{
+    private double cena;
+    private string marka;
+
+    public Komputer(string marka, double cena)
+    {
+        this.cena = cena;
+        this.marka = marka;
+    }
+
+    public double Cena
+    {
+        get { return cena; }
+        set { cena = value; }
+    }
+
+    public string Marka
+    {
+        get { return marka; }
+    }
+
+    public override string ToString()
+    {
+        return marka + " " + cena;
+    }
+}
