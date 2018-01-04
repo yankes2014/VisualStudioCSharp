@@ -26,8 +26,19 @@ namespace SerwerUDP
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int port = (int)numericUpDown1.Value; IPEndPoint zdalnyIP = new IPEndPoint(IPAddress.Any, 0); try { UdpClient serwer = new UdpClient(port); Byte[] odczyt = serwer.Receive(ref zdalnyIP); string dane = Encoding.ASCII.GetString(odczyt); listBox1.Items.Add(dane); serwer.Close(); }
-            catch (Exception ex) { MessageBox.Show(ex.Message, "Błąd"); } 
+            int port = (int)numericUpDown1.Value; 
+            IPEndPoint zdalnyIP = new IPEndPoint(IPAddress.Any, 0); 
+            try 
+            { 
+                UdpClient serwer = new UdpClient(port); 
+                Byte[] odczyt = serwer.Receive(ref zdalnyIP); 
+                string dane = Encoding.ASCII.GetString(odczyt); 
+                listBox1.Items.Add(dane); serwer.Close(); 
+            }
+            catch (Exception ex) 
+            { 
+                MessageBox.Show(ex.Message, "Błąd"); 
+            } 
         }
     }
 }
