@@ -1,0 +1,8 @@
+C:\Users\domin\Documents\GitHub\IO2017Plan\Plan\Logika\bin\Debug\Logika.dll
+C:\Users\domin\Documents\GitHub\IO2017Plan\Plan\Logika\bin\Debug\Logika.pdb
+C:\Users\domin\Documents\GitHub\IO2017Plan\Plan\Logika\bin\Debug\DostepDoDanych.dll
+C:\Users\domin\Documents\GitHub\IO2017Plan\Plan\Logika\bin\Debug\Mapster.dll
+C:\Users\domin\Documents\GitHub\IO2017Plan\Plan\Logika\bin\Debug\DostepDoDanych.pdb
+C:\Users\domin\Documents\GitHub\IO2017Plan\Plan\Logika\obj\Debug\Logika.csprojResolveAssemblyReference.cache
+C:\Users\domin\Documents\GitHub\IO2017Plan\Plan\Logika\obj\Debug\Logika.dll
+C:\Users\domin\Documents\GitHub\IO2017Plan\Plan\Logika\obj\Debug\Logika.pdb

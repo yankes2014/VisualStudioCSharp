@@ -1,0 +1,5 @@
+C:\Users\domin\Documents\GitHub\IO2017Plan\Plan\DostepDoDanych\bin\Debug\DostepDoDanych.dll
+C:\Users\domin\Documents\GitHub\IO2017Plan\Plan\DostepDoDanych\bin\Debug\DostepDoDanych.pdb
+C:\Users\domin\Documents\GitHub\IO2017Plan\Plan\DostepDoDanych\obj\Debug\DostepDoDanych.csprojResolveAssemblyReference.cache
+C:\Users\domin\Documents\GitHub\IO2017Plan\Plan\DostepDoDanych\obj\Debug\DostepDoDanych.dll
+C:\Users\domin\Documents\GitHub\IO2017Plan\Plan\DostepDoDanych\obj\Debug\DostepDoDanych.pdb

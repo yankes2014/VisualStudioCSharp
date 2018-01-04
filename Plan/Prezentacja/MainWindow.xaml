@@ -1,0 +1,349 @@
+﻿<Window x:Class="Prezentacja.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Prezentacja"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="1200"
+        Closing="OnGlowneOknoZamykanie"
+        PreviewMouseWheel="OnGlowneOknoRuchKulkaMyszki">
+    <Window.Resources>
+        <local:BoxGodzinyKonwerter x:Key="BoxGodzinyKonwerter" />
+    </Window.Resources>
+
+    <Window.CommandBindings>
+        <CommandBinding Command="Close" 
+                        CanExecute="OnCmdCloseMoznaWywolac" 
+                        Executed="OnCmdCloseWywolano" />
+    </Window.CommandBindings>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto"
+                  HorizontalScrollBarVisibility="Auto">
+        <Grid x:Name="kontener">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Grid x:Name="naglowek"
+                  Grid.Row="0"
+                  Background="#FFF0F0F0">
+                <Menu HorizontalAlignment="Center"
+                      Width="1024"
+                      Background="Transparent">
+                    <MenuItem Header="Plik">
+                        <MenuItem Header="Eksportuj plan"/>
+                        <MenuItem Command="Close"  />
+                    </MenuItem>
+                </Menu>
+            </Grid>
+
+            <Grid x:Name="zawartosc"
+                  Grid.Row="1" Width="1000"
+                  MinHeight="650"
+                  HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <DockPanel Grid.Column="0"
+                           MinHeight="650"
+                           LastChildFill="True">
+                    <GroupBox Margin="5" Padding="5"
+                              DockPanel.Dock="Top"
+                              Header="Wybór grupy">
+                        <StackPanel>
+                            <ComboBox x:Name="comboForma" 
+                                      Text="Forma studiów" 
+                                      Style="{StaticResource comboGrupa }">
+                                <ComboBox.Items>
+                                    <system:String>Forma studiów</system:String>
+                                    <Separator/>
+                                    <system:String>stacjonarne</system:String>
+                                    <system:String>niestacjonarne</system:String>
+                                </ComboBox.Items>
+                            </ComboBox>
+
+                            <ComboBox x:Name="comboKierunek"
+                                      Text="Kierunek studiów" 
+                                      Style="{StaticResource comboGrupa}"
+                                      SelectionChanged="OnComboWyborGrupySelekcja">
+                                <system:String>Kierunek studiów</system:String>
+                                <Separator/>
+                                <system:String>informatyka</system:String>
+                                <system:String>informatyka i ekonometria</system:String>
+                            </ComboBox>
+
+                            <ComboBox x:Name="comboStopien"
+                                      Text="Stopień studiów" 
+                                      Style="{StaticResource comboGrupa}"
+                                      SelectionChanged="OnComboWyborGrupySelekcja">
+                                <system:String>Stopień studiów</system:String>
+                                <Separator/>
+                                <system:String>inżynierskie</system:String>
+                                <system:String>licencjackie</system:String>
+                                <system:String>magisterskie</system:String>
+                            </ComboBox>
+
+                            <ComboBox x:Name="comboSemestr" 
+                                      Text="Semestr" 
+                                      Style="{StaticResource comboGrupa}"
+                                      SelectionChanged="OnComboWyborGrupySelekcja">
+                                <ComboBox.Items>
+                                    <system:String>Semestr</system:String>
+                                    <Separator/>
+                                    <system:Int32>1</system:Int32>
+                                    <system:Int32>2</system:Int32>
+                                    <system:Int32>3</system:Int32>
+                                    <system:Int32>4</system:Int32>
+                                    <system:Int32>5</system:Int32>
+                                    <system:Int32>6</system:Int32>
+                                    <system:Int32>7</system:Int32>
+                                    <system:Int32>8</system:Int32>
+                                    <system:Int32>9</system:Int32>
+                                    <system:Int32>10</system:Int32>
+                                </ComboBox.Items>
+                            </ComboBox>
+
+                            <ComboBox x:Name="comboRodzaj" 
+                                      Text="Rodzaj" 
+                                      Style="{StaticResource comboGrupa}"
+                                      SelectionChanged="OnComboWyborGrupySelekcja">
+                                <ComboBox.Items>
+                                    <system:String>Rodzaj</system:String>
+                                    <Separator/>
+                                    <system:String>dziekańska</system:String>
+                                    <system:String>laboratoryjna</system:String>
+                                    <system:String>ćwiczeniowa</system:String>
+                                    <system:String>wykładowa</system:String>
+                                    <system:String>lektorat</system:String>
+                                    <system:String>wf</system:String>
+                                    <system:String>fakultetowa</system:String>
+                                    <system:String>warunkowa</system:String>
+                                    <system:String>pościgowa</system:String>
+                                    <system:String>specjalizacyjna</system:String>
+                                </ComboBox.Items>
+                            </ComboBox>
+
+                            <ComboBox x:Name="comboNumer" 
+                                      Text="Numer" 
+                                      Style="{StaticResource comboGrupa}"
+                                      SelectionChanged="OnComboNumerSelekcja">
+                                <system:String>Numer</system:String>
+                                <Separator/>
+                            </ComboBox>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <ListBox x:Name="boxGodziny"
+                             Margin="5"
+                             DockPanel.Dock="Top">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Label>
+                                    <MultiBinding Converter="{StaticResource BoxGodzinyKonwerter }">
+                                        <Binding Path="Hour" />
+                                        <Binding Path="Minute" />
+                                    </MultiBinding>
+                                </Label>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </DockPanel>
+
+                <GroupBox Margin="5" Padding="5" 
+                          Grid.Column="1"
+                          Header="Aktualny plan"
+                          MaxHeight="700">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                  HorizontalScrollBarVisibility="Hidden">
+                        <StackPanel>
+                            <TextBlock Text="Poniedziałek" 
+                                       Style="{StaticResource textRozklad}"/>
+                            <ScrollViewer HorizontalScrollBarVisibility="Visible"
+                                          VerticalScrollBarVisibility="Hidden">
+                                <Grid x:Name="gridPlanPoniedzialek"/>
+                            </ScrollViewer>
+
+                            <TextBlock Text="Wtorek" 
+                                       Style="{StaticResource textRozklad}"/>
+                            <ScrollViewer HorizontalScrollBarVisibility="Visible"
+                                          VerticalScrollBarVisibility="Hidden">
+                                <Grid x:Name="gridPlanWtorek"/>
+                            </ScrollViewer>
+
+                            <TextBlock Text="Środa" 
+                                       Style="{StaticResource textRozklad}"/>
+                            <ScrollViewer HorizontalScrollBarVisibility="Visible"
+                                          VerticalScrollBarVisibility="Hidden">
+                                <Grid x:Name="gridPlanSroda"/>
+                            </ScrollViewer>
+
+                            <TextBlock Text="Czwartek" 
+                                       Style="{StaticResource textRozklad}"/>
+                            <ScrollViewer HorizontalScrollBarVisibility="Visible"
+                                          VerticalScrollBarVisibility="Hidden">
+                                <Grid x:Name="gridPlanCzwartek"/>
+                            </ScrollViewer>
+
+                            <TextBlock Text="Piątek" 
+                                       Style="{StaticResource textRozklad}"/>
+                            <ScrollViewer HorizontalScrollBarVisibility="Visible"
+                                          VerticalScrollBarVisibility="Hidden">
+                                <Grid x:Name="gridPlanPiatek"/>
+                            </ScrollViewer>
+
+                            <TextBlock Text="Sobota" 
+                                       Style="{StaticResource textRozklad}"/>
+                            <ScrollViewer HorizontalScrollBarVisibility="Visible"
+                                          VerticalScrollBarVisibility="Hidden">
+                                <Grid x:Name="gridPlanSobota"/>
+                            </ScrollViewer>
+
+                            <TextBlock Text="Niedziela" 
+                                       Style="{StaticResource textRozklad}"/>
+                            <ScrollViewer HorizontalScrollBarVisibility="Visible"
+                                          VerticalScrollBarVisibility="Hidden">
+                                <Grid x:Name="gridPlanNiedziela"/>
+                            </ScrollViewer>
+                        </StackPanel>
+                    </ScrollViewer>
+                </GroupBox>
+
+
+
+                <StackPanel Grid.Column="2" 
+                            MinHeight="{Binding MinHeight, ElementName=zawartosc}">
+                    <GroupBox Margin="5" Padding="5"
+                              Header="Wybór pierwszych zajęć">
+                        <StackPanel>
+                            <ComboBox x:Name="comboDzienTygodnia"
+                                      Style="{StaticResource comboGrupa}">
+                                <system:String>Dzień tygodnia</system:String>
+                                <Separator/>
+                                <system:String>poniedziałek</system:String>
+                                <system:String>wtorek</system:String>
+                                <system:String>środa</system:String>
+                                <system:String>czwartek</system:String>
+                                <system:String>piątek</system:String>
+                                <system:String>sobota</system:String>
+                                <system:String>niedziela</system:String>
+                            </ComboBox>
+                            <ComboBox x:Name="comboNumerPierwszegoTygodnia"
+                                      Style="{StaticResource comboGrupa}">
+                                <system:String>Numer tygodnia</system:String>
+                                <Separator/>
+                                <system:Int32>1</system:Int32>
+                                <system:Int32>2</system:Int32>
+                                <system:Int32>3</system:Int32>
+                                <system:Int32>4</system:Int32>
+                                <system:Int32>5</system:Int32>
+                                <system:Int32>6</system:Int32>
+                                <system:Int32>7</system:Int32>
+                                <system:Int32>8</system:Int32>
+                                <system:Int32>9</system:Int32>
+                                <system:Int32>10</system:Int32>
+                                <system:Int32>11</system:Int32>
+                                <system:Int32>12</system:Int32>
+                                <system:Int32>13</system:Int32>
+                                <system:Int32>14</system:Int32>
+                                <system:Int32>15</system:Int32>
+                            </ComboBox>
+                        </StackPanel>
+                    </GroupBox>
+                    
+                    <GroupBox Margin="5" Padding="5"
+                              Header="Wybór zajęć">
+                        <StackPanel Orientation="Vertical"
+                                    VerticalAlignment="Top">
+                            <ComboBox Style="{StaticResource comboZajecia}"
+                                      x:Name="comboTytul">
+                                <system:String>Tytuł</system:String>
+                                <Separator/>
+                            </ComboBox>
+
+                            <!-- Kontrolki do dodawania nauczycieli -->
+                            <Grid Width="125" Height="150" 
+                                  Margin="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="25"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="25" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+
+                                <Button Grid.Row="0" Grid.Column="0" 
+                                        x:Name="btnDodajNauczyciela"
+                                        Content="+"
+                                        FontSize="20"
+                                        Padding="0 -3 0 0"
+                                        Height="25"
+                                        Click="OnBtnDodajNauczycielaKlik"/>
+
+                                <ComboBox Grid.Row="0" Grid.Column="1" 
+                                          x:Name="comboDodajNauczyciela"
+                                          KeyDown="OnComboDodajNauczycielaKlawiszEnter"
+                                          IsEditable="True"
+                                          SelectedIndex="0">
+                                    <system:String>Wybór prowadzących</system:String>
+                                    <Separator />
+                                </ComboBox>
+
+                                <ListBox Grid.Row="1" Grid.ColumnSpan="2"
+                                         x:Name="boxNauczyciele"
+                                         KeyDown="OnBoxDodajNauczycielaKlawiszDelete">
+                                    <ListBox.ContextMenu>
+                                        <ContextMenu>
+                                            <MenuItem Header="Usuń"
+                                                      Click="OnBoxNauczycieleMenuKlik"/>
+                                        </ContextMenu>
+                                    </ListBox.ContextMenu>
+                                </ListBox>
+                            </Grid>
+                            <!-- Koniec kontrolek do dodawania nauczycieli -->
+
+                            <ComboBox Style="{StaticResource comboZajecia}"
+                                      x:Name="comboCzestosc">
+                                <system:String>Częstość zajęć</system:String>
+                                <Separator />
+                                <system:String>co 1 tydzień</system:String>
+                                <system:String>co 2 tygodnie</system:String>
+                            </ComboBox>
+
+                            <TextBlock Text="Czas trwania jednych zajęć w minutach: "
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Center"/>
+                            <TextBox x:Name="textCzasTrwania"
+                                     Width="50"/>
+
+                            <ComboBox Style="{StaticResource comboZajecia}"
+                                      x:Name="comboSala">
+                                <system:String>Sala</system:String>
+                                <Separator />
+                            </ComboBox>
+
+                            <Button x:Name="btnInsertLessons" 
+                                    Style="{StaticResource btnZajecia}"
+                                    Content="Dodaj" 
+                                    Click="OnBtnDodajZajeciaKlik"/>
+                            <Button x:Name="btnModyfikujZajecia" 
+                                    Style="{StaticResource btnZajecia}"
+                                    Content="Edytuj"/>
+                            <Button x:Name="btnUsunZajecia" 
+                                    Style="{StaticResource btnZajecia}"
+                                    Content="Usuń"/>
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </ScrollViewer>
+</Window>

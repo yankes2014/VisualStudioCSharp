@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F969071E-F759-4178-A80B-F34F59A654B5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Logika</RootNamespace>
+    <AssemblyName>Logika</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mapster, Version=2.6.1.0, Culture=neutral, PublicKeyToken=2f39883af23c29a8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mapster.2.6.1\lib\net45\Mapster.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dane\Dzien.cs" />
+    <Compile Include="Dane\RodzajWydarzenia.cs" />
+    <Compile Include="EksporterPlanu.cs" />
+    <Compile Include="Dane\Grupa.cs" />
+    <Compile Include="LogikaPlanu.cs" />
+    <Compile Include="Dane\Osoba.cs" />
+    <Compile Include="Dane\Plan.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Dane\Prowadzacy.cs" />
+    <Compile Include="Dane\Przedmiot.cs" />
+    <Compile Include="Dane\Rekord.cs" />
+    <Compile Include="Dane\Repozytorium.cs" />
+    <Compile Include="Dane\RodzajGrupy.cs" />
+    <Compile Include="Dane\Sala.cs" />
+    <Compile Include="Dane\Stale.cs" />
+    <Compile Include="Dane\StopienStudiow.cs" />
+    <Compile Include="Dane\Student.cs" />
+    <Compile Include="Dane\TrybStudiow.cs" />
+    <Compile Include="Dane\Typ.cs" />
+    <Compile Include="Dane\TypSali.cs" />
+    <Compile Include="Dane\Tytuly.cs" />
+    <Compile Include="Dane\TytulyNaukowe.cs" />
+    <Compile Include="WykrywaczKonfliktow.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DostepDoDanych\DostepDoDanych.csproj">
+      <Project>{adc25a9f-8064-411f-b0d0-ec6db9f1eabe}</Project>
+      <Name>DostepDoDanych</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,37 @@
+﻿<Application x:Class="Prezentacja.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Prezentacja"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style x:Key="comboGrupa" TargetType="ComboBox">
+            <Setter Property="SelectedIndex" Value="0"/>
+            <Setter Property="Margin" Value="0 10 0 0"/>
+            <Setter Property="IsEditable" Value="True"/>
+            <Setter Property="IsReadOnly" Value="True"/>
+        </Style>
+
+
+        <Style x:Key="comboZajecia" TargetType="ComboBox">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Width" Value="150" />
+            <Setter Property="SelectedIndex" Value="0"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="IsEditable" Value="True"/>
+        </Style>
+
+        <Style x:Key="btnZajecia" TargetType="Button">
+            <Setter Property="Margin" Value="5 0"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Padding" Value="5" />
+        </Style>
+
+        <Style x:Key="textRozklad" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+
+    </Application.Resources>
+</Application>
