@@ -1,0 +1,14 @@
+C:\Users\domin\Desktop\ProjektArchitekturaOpr\Logowanie\bin\Debug\Logowanie.exe.config
+C:\Users\domin\Desktop\ProjektArchitekturaOpr\Logowanie\bin\Debug\Logowanie.exe
+C:\Users\domin\Desktop\ProjektArchitekturaOpr\Logowanie\bin\Debug\Logowanie.pdb
+C:\Users\domin\Desktop\ProjektArchitekturaOpr\Logowanie\obj\Debug\Logowanie.Properties.Resources.resources
+C:\Users\domin\Desktop\ProjektArchitekturaOpr\Logowanie\obj\Debug\Logowanie.csproj.GenerateResource.Cache
+C:\Users\domin\Desktop\ProjektArchitekturaOpr\Logowanie\obj\Debug\Logowanie.exe
+C:\Users\domin\Desktop\ProjektArchitekturaOpr\Logowanie\obj\Debug\Logowanie.pdb
+C:\Users\domin\Desktop\ProjektArchitekturaOpr\Logowanie\obj\Debug\Logowanie.Form1.resources
+C:\Users\domin\Desktop\ProjektArchitekturaOpr\Logowanie\obj\Debug\Logowanie.WidokGlowny.resources
+C:\Users\domin\Desktop\ProjektArchitekturaOpr\Logowanie\obj\Debug\Logowanie.SzukanieOsoby.resources
+C:\Users\domin\Desktop\ProjektArchitekturaOpr\Logowanie\obj\Debug\Logowanie.csprojResolveAssemblyReference.cache
+C:\Users\domin\Desktop\ProjektArchitekturaOpr\Logowanie\obj\Debug\Logowanie.Statystyki.resources
+C:\Users\domin\Desktop\ProjektArchitekturaOpr\Logowanie\obj\Debug\Logowanie.OfertyPracy.resources
+C:\Users\domin\Desktop\ProjektArchitekturaOpr\Logowanie\obj\Debug\Logowanie.EdycjaDanychOkno.resources

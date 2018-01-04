@@ -1,0 +1,4 @@
+123456789;adolf;hitler;berlin;12;06-200;polna;wolny_wolna;mezczyzna;2222-11-11 00:00:00;MAIL1;brak;inzynier_informatyki,magister_matematyki;brak;False
+123443243;robert;dupacz;warszawa;11;06-201;pilsudkiego;wolny_wolna;mezczyzna;2202-11-11 00:00:00;MAIL2;brak;inzynier_informatyki,magister_matematyki;brak;False
+123443222;adam;patyk;janki;11;06-220;polna;wolny_wolna;mezczyzna;2000-11-11 00:00:00;MAIL3;brak;inzynier_informatyki,magister_matematyki;brak;True
+123456789;bambo;tango;mozambik;120;06-299;czysta;wolny_wolna;kobieta;2333-12-11 00:00:00;MAIL4;brak;inzynier_informatyki,magister_matematyki;brak;False

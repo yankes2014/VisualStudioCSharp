@@ -1,0 +1,3 @@
+moj nowy login;moje nowe haslo;False
+dupex;haslo;False
+login;tez_haslo;True

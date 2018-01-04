@@ -1,0 +1,4 @@
+oferta dla rolnika-astronauty;wyzsze;11000;magister_matematyki;Mail.gonzo;1
+oferta dla samotnej matki ;brak;12000;technik_zywienia;golebaby@malpa.com;3
+kucharz;srednie;1100;magister_matematyki;autentycznymail@mail;4
+
